@@ -4,19 +4,14 @@ import type { Manifest } from "deco-sites/std/live.gen.ts";
 
 export interface Account extends AccountBlock {
   /**
-   * @description WordPress domain.
+   * @description URL for the WordPress REST API.
    */
-  domain: string;
+  wordpressApiUrl?: string;
 
   /**
-   * @description WordPress username.
+   * @description Domain for WordPress.com.
    */
-  username?: string;
-
-  /**
-   * @description WordPress application password.
-   */
-  applicationPassword?: string;
+  wordpressComDomain?: string;
 }
 
 export type Context = FnContext<{

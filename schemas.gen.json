@@ -3603,31 +3603,24 @@
         }
       ],
       "properties": {
-        "domain": {
-          "type": "string",
-          "description": "WordPress domain.",
-          "title": "Domain"
-        },
-        "username": {
+        "wordpressApiUrl": {
           "type": [
             "string",
             "null"
           ],
-          "description": "WordPress username.",
-          "title": "Username"
+          "description": "URL for the WordPress REST API.",
+          "title": "Wordpress Api Url"
         },
-        "applicationPassword": {
+        "wordpressComDomain": {
           "type": [
             "string",
             "null"
           ],
-          "description": "WordPress application password.",
-          "title": "Application Password"
+          "description": "Domain for WordPress.com.",
+          "title": "Wordpress Com Domain"
         }
       },
-      "required": [
-        "domain"
-      ],
+      "required": [],
       "title": "deco-sites/blog/packs/wordpress/accounts/wordpress.ts@Account"
     },
     "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL2NsaWVudC50cw==@Locale": {
@@ -4825,21 +4818,40 @@
             "number",
             "null"
           ],
-          "title": "Per_page"
+          "title": "Posts Per Page",
+          "description": "The number of posts to retrieve per page"
         },
         "page": {
           "type": [
             "number",
             "null"
           ],
-          "title": "Page"
+          "title": "Page",
+          "description": "The page number to retrieve"
         },
         "slug": {
           "type": [
             "string",
             "null"
           ],
-          "title": "Slug"
+          "title": "Slug",
+          "description": "Limit result set to posts with one or more specific slugs."
+        },
+        "tags": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "title": " Tag ID",
+          "description": "Limit result set to items with specific terms assigned in the tags taxonomy."
+        },
+        "categories": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "title": "Category ID",
+          "description": "Limit result set to items with specific terms assigned in the categories taxonomy."
         }
       },
       "required": [],
