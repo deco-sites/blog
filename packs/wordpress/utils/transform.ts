@@ -1,5 +1,5 @@
-import { BlogPosting, ImageObject } from "../types.ts";
-import { BlogPost as BlogPostWordpress } from "./types.ts";
+import { BlogPosting, ImageObject } from "../../../blog/types.ts";
+import { BlogPost as BlogPostWordpress } from "../types.ts";
 
 export const toBlogPost = (post: BlogPostWordpress): BlogPosting => {
   return {

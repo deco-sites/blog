@@ -63,3 +63,11 @@ export interface PostListParams {
   /** Limit result set to posts with one or more specific slugs. */
   slug?: string;
 }
+
+export interface PostDetailsParam {
+  /**
+   * @title Post ID
+   * @description The ID of the post to retrieve.
+   */
+  id: string;
+}
