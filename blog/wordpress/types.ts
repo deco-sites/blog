@@ -51,7 +51,6 @@ export interface BlogPost {
   // Add more properties as needed, depending on your specific WordPress configuration
 }
 
-
 /**
  * WordPress REST API Response Schema for a List of Posts
  * More info: https://developer.wordpress.org/rest-api/reference/posts/

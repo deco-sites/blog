@@ -11,7 +11,7 @@ export const createClient = ({
   const fetcher = <T>(
     endpoint: string,
     method: "GET",
-    data?: Record<string, unknown>
+    data?: Record<string, unknown>,
   ) => {
     try {
       return fetchAPI<T>(`${domain}/wp-json/wp/v2/${endpoint}`, {
@@ -28,12 +28,14 @@ export const createClient = ({
   };
 
   const listPosts = async (params: PostListParams) => {
-    const qs = new URLSearchParams(Object.entries(params).reduce((acc, [key, value]) => {
-      if (value !== undefined) {
-        acc[key] = value;
-      }
-      return acc;
-    }, {} as Record<string, string>));    
+    const qs = new URLSearchParams(
+      Object.entries(params).reduce((acc, [key, value]) => {
+        if (value !== undefined) {
+          acc[key] = value;
+        }
+        return acc;
+      }, {} as Record<string, string>),
+    );
     const endpoint = `posts?${qs}`;
     return await fetcher<BlogPost[]>(endpoint, "GET");
   };

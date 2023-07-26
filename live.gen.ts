@@ -5,6 +5,7 @@
 import { DecoManifest } from "$live/types.ts";
 import * as $0 from "./functions/wordpressBlogPostDetails.ts";
 import * as $1 from "./functions/wordpressBlogPostList.ts";
+import * as $$0 from "./accounts/wordpress.ts";
 import * as $$$$0 from "./routes/styles.css.ts";
 import * as $$$$1 from "./routes/_app.tsx";
 import * as $$$$$$$$0 from "./sections/ParagraphList.tsx";
@@ -168,6 +169,15 @@ const manifest = {
     "deco-sites/std/functions/vtexSuggestions.ts": i2$25,
     "deco-sites/std/functions/vtexWishlist.ts": i2$26,
   },
+  "accounts": {
+    "deco-sites/blog/accounts/wordpress.ts": $$0,
+    "deco-sites/std/accounts/nuvemShop.ts": i2$$0,
+    "deco-sites/std/accounts/occ.ts": i2$$1,
+    "deco-sites/std/accounts/shopify.ts": i2$$2,
+    "deco-sites/std/accounts/vnda.ts": i2$$3,
+    "deco-sites/std/accounts/vtex.ts": i2$$4,
+    "deco-sites/std/accounts/yourViews.ts": i2$$5,
+  },
   "routes": {
     "./routes/_app.tsx": $$$$1,
     "./routes/_middleware.ts": $live_middleware,
@@ -283,14 +293,6 @@ const manifest = {
     "deco-sites/std/actions/vtex/notifyme.ts": i2$$$$$$17,
     "deco-sites/std/actions/vtex/wishlist/addItem.ts": i2$$$$$$18,
     "deco-sites/std/actions/vtex/wishlist/removeItem.ts": i2$$$$$$19,
-  },
-  "accounts": {
-    "deco-sites/std/accounts/nuvemShop.ts": i2$$0,
-    "deco-sites/std/accounts/occ.ts": i2$$1,
-    "deco-sites/std/accounts/shopify.ts": i2$$2,
-    "deco-sites/std/accounts/vnda.ts": i2$$3,
-    "deco-sites/std/accounts/vtex.ts": i2$$4,
-    "deco-sites/std/accounts/yourViews.ts": i2$$5,
   },
   "islands": {},
   "baseUrl": import.meta.url,

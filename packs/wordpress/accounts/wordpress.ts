@@ -11,12 +11,12 @@ export interface Account extends AccountBlock {
   /**
    * @description WordPress username.
    */
-  username: string;
+  username?: string;
 
   /**
    * @description WordPress application password.
    */
-  applicationPassword: string;
+  applicationPassword?: string;
 }
 
 export type Context = FnContext<{
