@@ -4812,6 +4812,353 @@
       ],
       "title": "deco-sites/blog/packs/wordpress/types.ts@PostDetailsParam"
     },
+    "ZGVjby1zaXRlcy9ibG9nL2Jsb2cvdHlwZXMudHM=@Thing": {
+      "title": "Thing"
+    },
+    "ZGVjby1zaXRlcy9ibG9nL2Jsb2cvdHlwZXMudHM=@ImageObject": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9ibG9nL2Jsb2cvdHlwZXMudHM=@Thing"
+        }
+      ],
+      "properties": {
+        "@type": {
+          "type": "string",
+          "const": "ImageObject",
+          "default": "ImageObject",
+          "title": "@type"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "title": "ImageObject"
+    },
+    "ZGVjby1zaXRlcy9ibG9nL2Jsb2cvdHlwZXMudHM=@omitQHR5cGU=Thing": {
+      "type": "object",
+      "properties": {
+        "@id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "@id"
+        },
+        "additionalType": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Additional Type"
+        },
+        "alternateName": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Alternate Name"
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Description"
+        },
+        "disambiguatingDescription": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Disambiguating Description"
+        },
+        "identifier": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Identifier"
+        },
+        "image": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9ibG9nL2Jsb2cvdHlwZXMudHM=@ImageObject",
+          "title": "Image"
+        },
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Name"
+        },
+        "sameAs": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Same As"
+        },
+        "subjectOf": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Subject Of"
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Url"
+        }
+      },
+      "required": [],
+      "title": "omitQHR5cGU=Thing"
+    },
+    "ZGVjby1zaXRlcy9ibG9nL2Jsb2cvdHlwZXMudHM=@Person": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9ibG9nL2Jsb2cvdHlwZXMudHM=@omitQHR5cGU=Thing"
+        }
+      ],
+      "properties": {
+        "@type": {
+          "type": "string",
+          "const": "Person",
+          "default": "Person",
+          "title": "@type"
+        },
+        "email": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Email"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "title": "Person"
+    },
+    "ZGVjby1zaXRlcy9ibG9nL2Jsb2cvdHlwZXMudHM=@Organization": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9ibG9nL2Jsb2cvdHlwZXMudHM=@omitQHR5cGU=Thing"
+        }
+      ],
+      "properties": {
+        "@type": {
+          "type": "string",
+          "const": "Organization",
+          "default": "Organization",
+          "title": "@type"
+        },
+        "email": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Email"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "title": "Organization"
+    },
+    "ZGVjby1zaXRlcy9ibG9nL2Jsb2cvdHlwZXMudHM=@Organization|Person": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9ibG9nL2Jsb2cvdHlwZXMudHM=@Person"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9ibG9nL2Jsb2cvdHlwZXMudHM=@Organization"
+        }
+      ],
+      "title": "Organization|Person"
+    },
+    "ZGVjby1zaXRlcy9ibG9nL2Jsb2cvdHlwZXMudHM=@Organization|Person[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9ibG9nL2Jsb2cvdHlwZXMudHM=@Organization|Person"
+      },
+      "title": "Organization|Person[]"
+    },
+    "ZGVjby1zaXRlcy9ibG9nL2Jsb2cvdHlwZXMudHM=@omitQHR5cGU=CreativeWork": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9ibG9nL2Jsb2cvdHlwZXMudHM=@omitQHR5cGU=Thing"
+        }
+      ],
+      "properties": {
+        "author": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9ibG9nL2Jsb2cvdHlwZXMudHM=@Organization|Person[]",
+          "title": "Author"
+        },
+        "keywords": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Keywords"
+        },
+        "thumbnailUrl": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Thumbnail Url"
+        },
+        "thumbnail": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9ibG9nL2Jsb2cvdHlwZXMudHM=@ImageObject",
+          "title": "Thumbnail"
+        },
+        "datePublished": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Date Published"
+        },
+        "dateModified": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Date Modified"
+        },
+        "headline": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Headline"
+        }
+      },
+      "required": [],
+      "title": "omitQHR5cGU=CreativeWork"
+    },
+    "ZGVjby1zaXRlcy9ibG9nL2Jsb2cvdHlwZXMudHM=@omitQHR5cGU=Article": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9ibG9nL2Jsb2cvdHlwZXMudHM=@omitQHR5cGU=CreativeWork"
+        }
+      ],
+      "properties": {
+        "articleBody": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Article Body"
+        },
+        "articleSection": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Article Section"
+        },
+        "pageEnd": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Page End"
+        },
+        "pageStart": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Page Start"
+        },
+        "pagination": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Pagination"
+        },
+        "wordCount": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "title": "Word Count"
+        }
+      },
+      "required": [],
+      "title": "omitQHR5cGU=Article"
+    },
+    "ZGVjby1zaXRlcy9ibG9nL2Jsb2cvdHlwZXMudHM=@BlogPosting": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9ibG9nL2Jsb2cvdHlwZXMudHM=@omitQHR5cGU=Article"
+        }
+      ],
+      "properties": {
+        "@type": {
+          "type": "string",
+          "const": "BlogPosting",
+          "default": "BlogPosting",
+          "title": "@type"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "title": "BlogPosting"
+    },
+    "ZGVjby1zaXRlcy9ibG9nL2Jsb2cvdHlwZXMudHM=@BlogPosting[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9ibG9nL2Jsb2cvdHlwZXMudHM=@BlogPosting"
+      },
+      "title": "BlogPosting[]"
+    },
+    "ZGVjby1zaXRlcy9ibG9nL2Jsb2cvdHlwZXMudHM=@BlogPosting[]|null": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/Resolvable"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9ibG9nL2Jsb2cvdHlwZXMudHM=@BlogPosting[]"
+        },
+        {
+          "type": "null"
+        },
+        {
+          "title": "WordPress - List Blog Posts",
+          "description": "Use this function to list blog posts from a WordPress site.",
+          "type": "object",
+          "allOf": [
+            {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9ibG9nL3BhY2tzL3dvcmRwcmVzcy90eXBlcy50cw==@PostListParams"
+            }
+          ],
+          "required": [
+            "__resolveType"
+          ],
+          "properties": {
+            "__resolveType": {
+              "type": "string",
+              "enum": [
+                "deco-sites/blog/loaders/wordpress/postList.ts"
+              ],
+              "default": "deco-sites/blog/loaders/wordpress/postList.ts"
+            }
+          }
+        }
+      ]
+    },
     "ZGVjby1zaXRlcy9ibG9nL3BhY2tzL3dvcmRwcmVzcy90eXBlcy50cw==@PostListParams": {
       "type": "object",
       "properties": {
@@ -10527,329 +10874,6 @@
       },
       "required": [],
       "title": "deco-sites/blog/sections/ParagraphList.tsx@Props"
-    },
-    "ZGVjby1zaXRlcy9ibG9nL2Jsb2cvdHlwZXMudHM=@Thing": {
-      "title": "Thing"
-    },
-    "ZGVjby1zaXRlcy9ibG9nL2Jsb2cvdHlwZXMudHM=@ImageObject": {
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9ibG9nL2Jsb2cvdHlwZXMudHM=@Thing"
-        }
-      ],
-      "properties": {
-        "@type": {
-          "type": "string",
-          "const": "ImageObject",
-          "default": "ImageObject",
-          "title": "@type"
-        }
-      },
-      "required": [
-        "@type"
-      ],
-      "title": "ImageObject"
-    },
-    "ZGVjby1zaXRlcy9ibG9nL2Jsb2cvdHlwZXMudHM=@omitQHR5cGU=Thing": {
-      "type": "object",
-      "properties": {
-        "@id": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "@id"
-        },
-        "additionalType": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Additional Type"
-        },
-        "alternateName": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Alternate Name"
-        },
-        "description": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Description"
-        },
-        "disambiguatingDescription": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Disambiguating Description"
-        },
-        "identifier": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Identifier"
-        },
-        "image": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9ibG9nL2Jsb2cvdHlwZXMudHM=@ImageObject",
-          "title": "Image"
-        },
-        "name": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Name"
-        },
-        "sameAs": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Same As"
-        },
-        "subjectOf": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Subject Of"
-        },
-        "url": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Url"
-        }
-      },
-      "required": [],
-      "title": "omitQHR5cGU=Thing"
-    },
-    "ZGVjby1zaXRlcy9ibG9nL2Jsb2cvdHlwZXMudHM=@Person": {
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9ibG9nL2Jsb2cvdHlwZXMudHM=@omitQHR5cGU=Thing"
-        }
-      ],
-      "properties": {
-        "@type": {
-          "type": "string",
-          "const": "Person",
-          "default": "Person",
-          "title": "@type"
-        },
-        "email": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Email"
-        }
-      },
-      "required": [
-        "@type"
-      ],
-      "title": "Person"
-    },
-    "ZGVjby1zaXRlcy9ibG9nL2Jsb2cvdHlwZXMudHM=@Organization": {
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9ibG9nL2Jsb2cvdHlwZXMudHM=@omitQHR5cGU=Thing"
-        }
-      ],
-      "properties": {
-        "@type": {
-          "type": "string",
-          "const": "Organization",
-          "default": "Organization",
-          "title": "@type"
-        },
-        "email": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Email"
-        }
-      },
-      "required": [
-        "@type"
-      ],
-      "title": "Organization"
-    },
-    "ZGVjby1zaXRlcy9ibG9nL2Jsb2cvdHlwZXMudHM=@Organization|Person": {
-      "anyOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9ibG9nL2Jsb2cvdHlwZXMudHM=@Person"
-        },
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9ibG9nL2Jsb2cvdHlwZXMudHM=@Organization"
-        }
-      ],
-      "title": "Organization|Person"
-    },
-    "ZGVjby1zaXRlcy9ibG9nL2Jsb2cvdHlwZXMudHM=@Organization|Person[]": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/ZGVjby1zaXRlcy9ibG9nL2Jsb2cvdHlwZXMudHM=@Organization|Person"
-      },
-      "title": "Organization|Person[]"
-    },
-    "ZGVjby1zaXRlcy9ibG9nL2Jsb2cvdHlwZXMudHM=@omitQHR5cGU=CreativeWork": {
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9ibG9nL2Jsb2cvdHlwZXMudHM=@omitQHR5cGU=Thing"
-        }
-      ],
-      "properties": {
-        "author": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9ibG9nL2Jsb2cvdHlwZXMudHM=@Organization|Person[]",
-          "title": "Author"
-        },
-        "keywords": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Keywords"
-        },
-        "thumbnailUrl": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Thumbnail Url"
-        },
-        "thumbnail": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9ibG9nL2Jsb2cvdHlwZXMudHM=@ImageObject",
-          "title": "Thumbnail"
-        },
-        "datePublished": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Date Published"
-        },
-        "dateModified": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Date Modified"
-        },
-        "headline": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Headline"
-        }
-      },
-      "required": [],
-      "title": "omitQHR5cGU=CreativeWork"
-    },
-    "ZGVjby1zaXRlcy9ibG9nL2Jsb2cvdHlwZXMudHM=@omitQHR5cGU=Article": {
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9ibG9nL2Jsb2cvdHlwZXMudHM=@omitQHR5cGU=CreativeWork"
-        }
-      ],
-      "properties": {
-        "articleBody": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Article Body"
-        },
-        "articleSection": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Article Section"
-        },
-        "pageEnd": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Page End"
-        },
-        "pageStart": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Page Start"
-        },
-        "pagination": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Pagination"
-        },
-        "wordCount": {
-          "type": [
-            "number",
-            "null"
-          ],
-          "title": "Word Count"
-        }
-      },
-      "required": [],
-      "title": "omitQHR5cGU=Article"
-    },
-    "ZGVjby1zaXRlcy9ibG9nL2Jsb2cvdHlwZXMudHM=@BlogPosting": {
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9ibG9nL2Jsb2cvdHlwZXMudHM=@omitQHR5cGU=Article"
-        }
-      ],
-      "properties": {
-        "@type": {
-          "type": "string",
-          "const": "BlogPosting",
-          "default": "BlogPosting",
-          "title": "@type"
-        }
-      },
-      "required": [
-        "@type"
-      ],
-      "title": "BlogPosting"
-    },
-    "ZGVjby1zaXRlcy9ibG9nL2Jsb2cvdHlwZXMudHM=@BlogPosting[]": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/ZGVjby1zaXRlcy9ibG9nL2Jsb2cvdHlwZXMudHM=@BlogPosting"
-      },
-      "title": "BlogPosting[]"
-    },
-    "ZGVjby1zaXRlcy9ibG9nL2Jsb2cvdHlwZXMudHM=@BlogPosting[]|null": {
-      "anyOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9ibG9nL2Jsb2cvdHlwZXMudHM=@BlogPosting[]"
-        },
-        {
-          "type": "null"
-        }
-      ],
-      "title": "BlogPosting[]|null"
     },
     "ZGVjby1zaXRlcy9ibG9nL3NlY3Rpb25zL1Bvc3RMaXN0LnRzeA==@Props": {
       "type": "object",
