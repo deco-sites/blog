@@ -95,7 +95,8 @@
               "$live/sections/PageInclude.tsx",
               "$live/sections/Slot.tsx",
               "$live/sections/UseSlot.tsx",
-              "deco-sites/blog/sections/Hero.tsx",
+              "deco-sites/blog/sections/BlogHeader.tsx",
+              "deco-sites/blog/sections/Heading.tsx",
               "deco-sites/blog/sections/ParagraphList.tsx",
               "deco-sites/blog/sections/SimpleTextList.tsx",
               "deco-sites/blog/sections/Theme.tsx",
@@ -10401,17 +10402,12 @@
       ],
       "title": "deco-cx/live/sections/UseSlot.tsx@Props"
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image": {
-      "type": "string",
-      "format": "image-uri",
-      "title": "Image"
-    },
-    "ZGVjby1zaXRlcy9ibG9nL3NlY3Rpb25zL0hlcm8udHN4@Link": {
+    "ZGVjby1zaXRlcy9ibG9nL2NvbXBvbmVudHMvdWkvaGVhZGVyL0hlYWRlci50c3g=@NavItem": {
       "type": "object",
       "properties": {
-        "title": {
+        "label": {
           "type": "string",
-          "title": "Title"
+          "title": "Label"
         },
         "href": {
           "type": "string",
@@ -10419,18 +10415,56 @@
         }
       },
       "required": [
-        "title",
+        "label",
         "href"
       ],
-      "title": "{{{title}}} - {{{href}}}"
+      "title": "NavItem"
     },
-    "ZGVjby1zaXRlcy9ibG9nL3NlY3Rpb25zL0hlcm8udHN4@Props": {
+    "ZGVjby1zaXRlcy9ibG9nL2NvbXBvbmVudHMvdWkvaGVhZGVyL0hlYWRlci50c3g=@NavItem[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9ibG9nL2NvbXBvbmVudHMvdWkvaGVhZGVyL0hlYWRlci50c3g=@NavItem"
+      },
+      "title": "NavItem[]"
+    },
+    "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image": {
+      "type": "string",
+      "format": "image-uri",
+      "title": "Image"
+    },
+    "ZGVjby1zaXRlcy9ibG9nL2NvbXBvbmVudHMvdWkvaGVhZGVyL0hlYWRlci50c3g=@Props": {
       "type": "object",
       "properties": {
-        "logo": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
-          "title": "Logo"
+        "navItems": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9ibG9nL2NvbXBvbmVudHMvdWkvaGVhZGVyL0hlYWRlci50c3g=@NavItem[]",
+          "title": "Navigation items",
+          "description": "Navigation items used both on mobile and desktop menus"
         },
+        "logo": {
+          "type": "object",
+          "properties": {
+            "src": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+              "title": "Src"
+            },
+            "alt": {
+              "type": "string",
+              "title": "Alt"
+            }
+          },
+          "required": [
+            "src",
+            "alt"
+          ],
+          "title": "Logo"
+        }
+      },
+      "required": [],
+      "title": "deco-sites/blog/components/ui/header/Header.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9ibG9nL3NlY3Rpb25zL0hlYWRpbmcudHN4@Props": {
+      "type": "object",
+      "properties": {
         "title": {
           "type": [
             "string",
@@ -10443,19 +10477,11 @@
             "string",
             "null"
           ],
-          "format": "textarea",
           "title": "Headline"
-        },
-        "links": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/ZGVjby1zaXRlcy9ibG9nL3NlY3Rpb25zL0hlcm8udHN4@Link"
-          },
-          "title": "Links"
         }
       },
       "required": [],
-      "title": "deco-sites/blog/sections/Hero.tsx@Props"
+      "title": "deco-sites/blog/sections/Heading.tsx@Props"
     },
     "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@HTML": {
       "type": "string",
@@ -14126,12 +14152,12 @@
         }
       }
     },
-    "ZGVjby1zaXRlcy9ibG9nL3NlY3Rpb25zL0hlcm8udHN4": {
-      "title": "deco-sites/blog/sections/Hero.tsx",
+    "ZGVjby1zaXRlcy9ibG9nL3NlY3Rpb25zL0Jsb2dIZWFkZXIudHN4": {
+      "title": "deco-sites/blog/sections/BlogHeader.tsx",
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9ibG9nL3NlY3Rpb25zL0hlcm8udHN4@Props"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9ibG9nL2NvbXBvbmVudHMvdWkvaGVhZGVyL0hlYWRlci50c3g=@Props"
         }
       ],
       "required": [
@@ -14141,9 +14167,30 @@
         "__resolveType": {
           "type": "string",
           "enum": [
-            "deco-sites/blog/sections/Hero.tsx"
+            "deco-sites/blog/sections/BlogHeader.tsx"
           ],
-          "default": "deco-sites/blog/sections/Hero.tsx"
+          "default": "deco-sites/blog/sections/BlogHeader.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9ibG9nL3NlY3Rpb25zL0hlYWRpbmcudHN4": {
+      "title": "deco-sites/blog/sections/Heading.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9ibG9nL3NlY3Rpb25zL0hlYWRpbmcudHN4@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/blog/sections/Heading.tsx"
+          ],
+          "default": "deco-sites/blog/sections/Heading.tsx"
         }
       }
     },
@@ -15586,7 +15633,10 @@
           "$ref": "#/definitions/JGxpdmUvc2VjdGlvbnMvVXNlU2xvdC50c3g="
         },
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9ibG9nL3NlY3Rpb25zL0hlcm8udHN4"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9ibG9nL3NlY3Rpb25zL0Jsb2dIZWFkZXIudHN4"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9ibG9nL3NlY3Rpb25zL0hlYWRpbmcudHN4"
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9ibG9nL3NlY3Rpb25zL1BhcmFncmFwaExpc3QudHN4"
