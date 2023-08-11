@@ -5,13 +5,17 @@ export interface Props {
   post: BlogPosting;
 }
 
-export default function BlogPostCard({ post }: Props) {
+export default function FeaturedBlogPost({ post }: Props) {
+
+    if (!post) {
+        return null;
+    }
   const author = post.author as Organization[];
   const formattedDate = formatDate(post.datePublished);
 
   return (
     <div class="flex flex-row space-y-2 lg:space-y-4">
-      <img
+      {/* <img
         class="aspect-video object-cover overflow-hidden"
         src={post.image?.url}
         alt={post.image?.alternateName}
@@ -28,7 +32,7 @@ export default function BlogPostCard({ post }: Props) {
           class="text-gray-400 line-clamp-3 leading-tight"
           dangerouslySetInnerHTML={{ __html: post.description || "" }}
         />
-      </div>
+      </div> */}
     </div>
   );
 }

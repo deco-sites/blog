@@ -11,7 +11,7 @@ import type { BlogPosting } from "../../../blog/types.ts";
 const blogPostListLoader = async (
   props: PostListParams,
   _req: Request,
-  ctx: Context
+  ctx: Context,
 ): Promise<BlogPosting[] | null> => {
   const listQuery = "_embed=wp:featuredmedia,author";
   const fieldsQuery = props.fields ? `_fields=${props.fields}` : "";
@@ -22,12 +22,12 @@ const blogPostListLoader = async (
         acc[key] = value;
       }
       return acc;
-    }, {} as Record<string, string>)
+    }, {} as Record<string, string>),
   );
 
   const [list] = await fetcher<BlogPost[]>(
     ctx,
-    `/posts?${fieldsQuery}&${qs}&${listQuery}`
+    `/posts?${fieldsQuery}&${qs}&${listQuery}`,
   );
 
   const posts = list.map((post: BlogPost) => {
