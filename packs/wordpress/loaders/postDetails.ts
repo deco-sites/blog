@@ -2,6 +2,7 @@ import { fetcher } from "../utils/fetcher.ts";
 import { toBlogPost } from "../utils/transform.ts";
 import type { Context } from "../accounts/wordpress.ts";
 import type { BlogPost, PostDetailsParam } from "../types.ts";
+import type { BlogPosting } from "../../../blog/types.ts";
 
 /**
  * @title WordPress - Get Blog Post
@@ -11,23 +12,18 @@ const blogPostDetailsLoader = async (
   props: PostDetailsParam,
   _req: Request,
   ctx: Context,
-) => {
-  if (!props.id) return;
+): Promise<BlogPosting | null> => {
+  if (!props.id) return null;
 
   const [res] = await fetcher<BlogPost>(ctx, `/posts/${props.id}`);
 
   if (!res) {
-    return {
-      data: null,
-      status: 404,
-    };
+    return null;
   }
 
   const post = toBlogPost(res);
 
-  return {
-    data: post,
-  };
+  return post;
 };
 
 export default blogPostDetailsLoader;

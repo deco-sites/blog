@@ -12,26 +12,26 @@ function Navbar({
   return (
     <>
       {/* Mobile Version */}
-      <div class="md:hidden flex flex-row justify-between items-center border-b border-base-200 w-full pr-6 gap-2">
+      <div class="md:hidden flex flex-row justify-between items-center border-b border-base-200 gap-2 h-20 mx-8">
         {logo && (
           <a
             href="/"
             class="flex-grow inline-flex items-center"
             aria-label="Blog logo"
           >
-            <Image src={logo.src} alt={logo.alt} width={80} />
+            <Image src={logo.src} alt={logo.alt} width={80} height={20} />
           </a>
         )}
       </div>
 
       {/* Desktop Version */}
       <div class="hidden md:flex container mx-auto text-base items-center justify-between border-b h-20">
-        <div class="flex-none w-44">
+        <div>
           {logo && (
             <a
               href="/"
               aria-label="Blog logo"
-              class="block px-4 py-3 w-[160px]"
+              class="block p-2"
             >
               <Image src={logo.src} alt={logo.alt} width={80} />
             </a>

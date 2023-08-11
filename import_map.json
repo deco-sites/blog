@@ -2,8 +2,8 @@
   "imports": {
     "deco-sites/blog/": "./",
     "deco-sites/start/": "./",
-    "deco-sites/std/": "https://denopkg.com/deco-sites/std@1.14.9/",
-    "$live/": "https://denopkg.com/deco-cx/live@1.22.9/",
+    "deco-sites/std/": "https://denopkg.com/deco-sites/std@1.18.13/",
+    "$live/": "https://denopkg.com/deco-cx/live@1.25.6/",
     "$fresh/": "https://denopkg.com/deco-cx/fresh@1.3.0/",
     "preact": "https://esm.sh/preact@10.15.1",
     "preact/": "https://esm.sh/preact@10.15.1/",

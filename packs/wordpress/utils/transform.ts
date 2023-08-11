@@ -1,20 +1,41 @@
-import { BlogPosting, ImageObject } from "../../../blog/types.ts";
+import { BlogPosting, ImageObject, Organization } from "../../../blog/types.ts";
 import { BlogPost as BlogPostWordpress } from "../types.ts";
 
 export const toBlogPost = (post: BlogPostWordpress): BlogPosting => {
+  const featuredMedia = post._embedded?.["wp:featuredmedia"]?.find(
+    (media) => media.id === post.featured_media,
+  );
+
+  const author = post._embedded?.["author"]?.find(
+    (author) => author.id === post.author,
+  );
+
   return {
     "@type": "BlogPosting",
-    "@id": post.id.toString(),
-    headline: post.title.rendered,
-    image: post.featured_media
+    "@id": post.id?.toString(),
+    headline: post.title?.rendered,
+    description: post.excerpt?.rendered,
+    image: post._embedded?.["wp:featuredmedia"]?.[0]
       ? ({
         "@type": "ImageObject",
-        url: post.featured_media.toString(),
+        url: featuredMedia?.source_url,
+        alternateName: featuredMedia?.alt_text,
       } as ImageObject)
       : undefined,
     datePublished: post.date,
     dateModified: post.modified,
-    articleBody: post.content.rendered,
+    articleBody: post.content?.rendered,
+    author: author
+      ? [{
+        "@type": "Organization",
+        name: author?.name,
+        image: {
+          "@type": "ImageObject",
+          url: author?.avatar_urls?.["96"],
+          alternateName: author?.name,
+        },
+      } as Organization]
+      : undefined,
     url: post.link,
   };
 };

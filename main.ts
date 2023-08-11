@@ -7,10 +7,12 @@ import manifest from "./live.gen.ts";
 import { $live } from "$live/mod.ts";
 import { start } from "$fresh/server.ts";
 import partytownPlugin from "partytown/mod.ts";
+import { plugin as tailwindPlugin } from "deco-sites/std/plugins/tailwind/mod.ts";
 import site from "./site.json" assert { type: "json" };
 
 await start($live(manifest, site), {
   plugins: [
     partytownPlugin(),
+    tailwindPlugin,
   ],
 });

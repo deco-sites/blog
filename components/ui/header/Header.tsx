@@ -21,7 +21,7 @@ function Header({ navItems = [], logo }: Props) {
   return (
     <>
       <header>
-        <div class="bg-base-100 fixed w-full z-50 top-0">
+        <div class="bg-white fixed w-full z-50 top-0">
           <Navbar items={navItems} logo={logo} />
         </div>
       </header>
