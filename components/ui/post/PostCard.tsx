@@ -1,5 +1,6 @@
-import type { BlogPosting, Organization } from "../../../blog/types.ts";
+import Image from "deco-sites/std/components/Image.tsx";
 import { formatDate } from "../../../sdk/format.ts";
+import type { BlogPosting, Organization } from "../../../blog/types.ts";
 
 export interface Props {
   post: BlogPosting;
@@ -11,9 +12,11 @@ export default function BlogPostCard({ post }: Props) {
 
   return (
     <div class="flex flex-col space-y-2 lg:space-y-4">
-      <img
+      <Image
         class="aspect-video object-cover overflow-hidden"
-        src={post.image?.url}
+        src={post.image?.url!}
+        width={640}
+        height={360}
         alt={post.image?.alternateName}
       />
       <div class="flex justify-between text-gray-400 tracking-wider font-light">
