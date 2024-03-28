@@ -10,6 +10,7 @@ export interface CTA {
 
 /** @title {{{title}}} */
 export interface Post {
+  url?: string;
   title?: string;
   author?: string;
   excerpt?: string;
@@ -20,14 +21,14 @@ export interface Post {
 }
 
 export interface Props {
-  posts?: Post;
+  post?: Post;
 }
 
 const DEFAULT_IMAGE =
   "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/4763/682eb374-def2-4e85-a45d-b3a7ff8a31a9";
 
 export default function MainPost({
-  posts = {
+  post = {
     title: "Title of blogpost #1",
     author: "Name of the author",
     excerpt:
@@ -41,39 +42,42 @@ export default function MainPost({
   return (
     <div class="lg:container lg:mx-auto lg:py-14 md:max-w-6xl mx-4 py-12 text-sm">
       <div class="space-y-16">
-        <div class="border border-secondary gap-8 grid grid-cols-1 items-center md:grid-cols-2 overflow-hidden rounded-lg">
-          {posts.image && (
+        <a
+          href={post.url}
+          class="border border-secondary gap-8 grid grid-cols-1 items-center md:grid-cols-2 overflow-hidden rounded-lg"
+        >
+          {post.image && (
             <Image
               width={656}
               height={500}
               class="object-fit w-full z-10"
               sizes="(max-width: 656px) 100vw, 30vw"
-              src={posts.image || ""}
-              alt={posts.image}
+              src={post.image || ""}
+              alt={post.image}
               decoding="async"
               loading="lazy"
             />
           )}
           <div class="p-6 space-y-4">
-            <div class="font-semibold">{posts.readingTime}</div>
+            <div class="font-semibold">{post.readingTime}</div>
             <div class="space-y-2">
-              <h3 class="text-2xl">{posts.title}</h3>
-              <p class="text-base">{posts.excerpt}</p>
+              <h3 class="text-2xl">{post.title}</h3>
+              <p class="text-base">{post.excerpt}</p>
             </div>
             <div class="flex flex-wrap gap-2">
-              {posts.tags?.map((tag) => (
+              {post.tags?.map((tag) => (
                 <div class="badge badge-lg badge-primary text-xs">
                   {tag}
                 </div>
               ))}
             </div>
             <div class="flex flex-wrap gap-2">
-              <span>{posts.date}</span>
+              <span>{post.date}</span>
               <span>•</span>
-              <span>{posts.author}</span>
+              <span>{post.author}</span>
             </div>
           </div>
-        </div>
+        </a>
       </div>
     </div>
   );
