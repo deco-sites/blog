@@ -1,15 +1,16 @@
 import type { ImageWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
+import { useState } from "preact/hooks";
 
 export interface CTA {
   id?: string;
-  href?: string;
   text?: string;
   outline?: boolean;
 }
 
 /** @title {{{title}}} */
 export interface Post {
+  url?: string;
   title?: string;
   author?: string;
   excerpt?: string;
@@ -21,6 +22,8 @@ export interface Post {
 
 export interface Props {
   cta?: CTA;
+  maxPerPage?: number;
+  postsPerClick?: number;
   posts?: Post[];
 }
 
@@ -28,9 +31,12 @@ const DEFAULT_IMAGE =
   "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/4763/682eb374-def2-4e85-a45d-b3a7ff8a31a9";
 
 export default function BlogPosts({
-  cta = { id: "view-all", href: "/", text: "View all", outline: true },
+  cta = { id: "view-all", text: "View all", outline: true },
+  maxPerPage = 6,
+  postsPerClick = 3,
   posts = [
     {
+      url: "/",
       title: "Title of blogpost #1",
       author: "Name of the author",
       excerpt:
@@ -41,6 +47,7 @@ export default function BlogPosts({
       tags: ["Tag #1", "Tag #2", "Tag #3"],
     },
     {
+      url: "/",
       title: "Title of blogpost #2",
       author: "Name of the author",
       excerpt:
@@ -51,6 +58,40 @@ export default function BlogPosts({
       tags: ["Tag #1", "Tag #2", "Tag #3"],
     },
     {
+      url: "/",
+      title: "Title of blogpost #3",
+      author: "Name of the author",
+      excerpt:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
+      image: DEFAULT_IMAGE,
+      date: "01 Apr 2024",
+      readingTime: "10 min",
+      tags: ["Tag #1", "Tag #2", "Tag #3"],
+    },
+    {
+      url: "/",
+      title: "Title of blogpost #3",
+      author: "Name of the author",
+      excerpt:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
+      image: DEFAULT_IMAGE,
+      date: "01 Apr 2024",
+      readingTime: "10 min",
+      tags: ["Tag #1", "Tag #2", "Tag #3"],
+    },
+    {
+      url: "/",
+      title: "Title of blogpost #3",
+      author: "Name of the author",
+      excerpt:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
+      image: DEFAULT_IMAGE,
+      date: "01 Apr 2024",
+      readingTime: "10 min",
+      tags: ["Tag #1", "Tag #2", "Tag #3"],
+    },
+    {
+      url: "/",
       title: "Title of blogpost #3",
       author: "Name of the author",
       excerpt:
@@ -62,15 +103,23 @@ export default function BlogPosts({
     },
   ],
 }: Props) {
+  const [visiblePosts, setVisiblePosts] = useState(maxPerPage);
+
+  const showMorePosts = () => {
+    setVisiblePosts((prevVisiblePosts) => prevVisiblePosts + postsPerClick);
+  };
   return (
     <div class="lg:container lg:mx-auto lg:py-14 md:max-w-6xl mx-4 py-12 text-sm">
       <div class="space-y-16">
-        <div class="gap-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-          {posts?.map((post) => (
-            <div class="border border-secondary overflow-hidden rounded-lg">
+        <div class="gap-8 grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2">
+          {posts?.slice(0, visiblePosts).map((post) => (
+            <a
+              href={post.url}
+              class="border border-secondary overflow-hidden rounded-lg"
+            >
               <Image
                 width={640}
-                class="object-fit w-full z-10"
+                class="object-fit w-full"
                 sizes="(max-width: 640px) 100vw, 30vw"
                 src={post.image || ""}
                 alt={post.image}
@@ -96,22 +145,24 @@ export default function BlogPosts({
                   <span>{post.author}</span>
                 </div>
               </div>
-            </div>
+            </a>
           ))}
         </div>
-        <div class="w-full flex justify-center">
-          <a
-            key={cta?.id}
-            id={cta?.id}
-            href={cta?.href}
-            target={cta?.href?.includes("http") ? "_blank" : "_self"}
-            class={`font-normal btn btn-primary ${
-              cta.outline && "btn-outline"
-            }`}
-          >
-            {cta?.text}
-          </a>
-        </div>
+        {posts?.length > visiblePosts && (
+          <div class="flex justify-center w-full">
+            <button
+              key={cta?.id}
+              id={cta?.id}
+              class={`font-normal btn btn-primary ${
+                cta.outline && "btn-outline"
+              }`}
+              aria-label={cta?.text}
+              onClick={showMorePosts}
+            >
+              {cta?.text}
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
