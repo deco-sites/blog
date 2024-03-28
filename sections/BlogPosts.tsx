@@ -3,24 +3,23 @@ import Image from "apps/website/components/Image.tsx";
 
 export interface CTA {
   id?: string;
-  href: string;
-  text: string;
+  href?: string;
+  text?: string;
   outline?: boolean;
 }
 
+/** @title {{{title}}} */
 export interface Post {
-  title: string;
-  author: string;
-  excerpt: string;
-  image: ImageWidget;
-  date: string;
+  title?: string;
+  author?: string;
+  excerpt?: string;
+  image?: ImageWidget;
+  date?: string;
   readingTime?: string;
-  tags: string[];
+  tags?: string[];
 }
 
 export interface Props {
-  title?: string;
-  description?: string;
   cta?: CTA;
   posts?: Post[];
 }
@@ -29,8 +28,6 @@ const DEFAULT_IMAGE =
   "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/4763/682eb374-def2-4e85-a45d-b3a7ff8a31a9";
 
 export default function BlogPosts({
-  title = "Here's a component for you to showcase your blogposts",
-  description = "This subheading is fully editable, remember?",
   cta = { id: "view-all", href: "/", text: "View all", outline: true },
   posts = [
     {
@@ -66,37 +63,16 @@ export default function BlogPosts({
   ],
 }: Props) {
   return (
-    <div class="lg:container md:max-w-6xl lg:mx-auto mx-4 text-sm py-12 lg:py-28">
+    <div class="lg:container lg:mx-auto lg:py-14 md:max-w-6xl mx-4 py-12 text-sm">
       <div class="space-y-16">
-        <div class="flex flex-col lg:flex-row gap-4 justify-between">
-          <div class="space-y-6 lg:w-1/2">
-            <h2 class="text-4xl leading-snug">
-              {title}
-            </h2>
-            <p class="text-lg">
-              {description}
-            </p>
-          </div>
-          <a
-            key={cta?.id}
-            id={cta?.id}
-            href={cta?.href}
-            target={cta?.href.includes("http") ? "_blank" : "_self"}
-            class={`font-normal btn btn-primary ${
-              cta.outline && "btn-outline"
-            }`}
-          >
-            {cta?.text}
-          </a>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="gap-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {posts?.map((post) => (
-            <div class="border border-secondary rounded-lg overflow-hidden">
+            <div class="border border-secondary overflow-hidden rounded-lg">
               <Image
                 width={640}
-                class="w-full object-fit z-10"
+                class="object-fit w-full z-10"
                 sizes="(max-width: 640px) 100vw, 30vw"
-                src={post.image}
+                src={post.image || ""}
                 alt={post.image}
                 decoding="async"
                 loading="lazy"
@@ -122,6 +98,19 @@ export default function BlogPosts({
               </div>
             </div>
           ))}
+        </div>
+        <div class="w-full flex justify-center">
+          <a
+            key={cta?.id}
+            id={cta?.id}
+            href={cta?.href}
+            target={cta?.href?.includes("http") ? "_blank" : "_self"}
+            class={`font-normal btn btn-primary ${
+              cta.outline && "btn-outline"
+            }`}
+          >
+            {cta?.text}
+          </a>
         </div>
       </div>
     </div>
