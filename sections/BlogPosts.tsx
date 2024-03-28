@@ -32,7 +32,7 @@ const DEFAULT_IMAGE =
 
 export default function BlogPosts({
   cta = { id: "view-all", text: "View all", outline: true },
-  maxPerPage = 6,
+  maxPerPage = 9,
   postsPerClick = 3,
   posts = [
     {
@@ -70,7 +70,7 @@ export default function BlogPosts({
     },
     {
       url: "/",
-      title: "Title of blogpost #3",
+      title: "Title of blogpost #4",
       author: "Name of the author",
       excerpt:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
@@ -81,7 +81,7 @@ export default function BlogPosts({
     },
     {
       url: "/",
-      title: "Title of blogpost #3",
+      title: "Title of blogpost #5",
       author: "Name of the author",
       excerpt:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
@@ -92,7 +92,73 @@ export default function BlogPosts({
     },
     {
       url: "/",
-      title: "Title of blogpost #3",
+      title: "Title of blogpost #6",
+      author: "Name of the author",
+      excerpt:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
+      image: DEFAULT_IMAGE,
+      date: "01 Apr 2024",
+      readingTime: "10 min",
+      tags: ["Tag #1", "Tag #2", "Tag #3"],
+    },
+    {
+      url: "/",
+      title: "Title of blogpost #7",
+      author: "Name of the author",
+      excerpt:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
+      image: DEFAULT_IMAGE,
+      date: "01 Apr 2024",
+      readingTime: "10 min",
+      tags: ["Tag #1", "Tag #2", "Tag #3"],
+    },
+    {
+      url: "/",
+      title: "Title of blogpost #8",
+      author: "Name of the author",
+      excerpt:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
+      image: DEFAULT_IMAGE,
+      date: "01 Apr 2024",
+      readingTime: "10 min",
+      tags: ["Tag #1", "Tag #2", "Tag #3"],
+    },
+    {
+      url: "/",
+      title: "Title of blogpost #9",
+      author: "Name of the author",
+      excerpt:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
+      image: DEFAULT_IMAGE,
+      date: "01 Apr 2024",
+      readingTime: "10 min",
+      tags: ["Tag #1", "Tag #2", "Tag #3"],
+    },
+    {
+      url: "/",
+      title: "Title of blogpost #10",
+      author: "Name of the author",
+      excerpt:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
+      image: DEFAULT_IMAGE,
+      date: "01 Apr 2024",
+      readingTime: "10 min",
+      tags: ["Tag #1", "Tag #2", "Tag #3"],
+    },
+    {
+      url: "/",
+      title: "Title of blogpost #11",
+      author: "Name of the author",
+      excerpt:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
+      image: DEFAULT_IMAGE,
+      date: "01 Apr 2024",
+      readingTime: "10 min",
+      tags: ["Tag #1", "Tag #2", "Tag #3"],
+    },
+    {
+      url: "/",
+      title: "Title of blogpost #12",
       author: "Name of the author",
       excerpt:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
