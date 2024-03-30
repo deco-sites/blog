@@ -3,10 +3,6 @@
     "title": "FAQs",
     "__resolveType": "site/sections/Faq.tsx"
   },
-  "Preview Sections MyHero": {
-    "name": "works!",
-    "__resolveType": "site/sections/myHero.tsx"
-  },
   "Vanilla": {
     "font": {
       "fonts": [
