@@ -1,1 +1,1 @@
-export { default } from "site/sections/BlogPosts.tsx";
+export { default } from "../components/BlogPosts.tsx";
