@@ -1,7 +1,7 @@
 import type { ImageWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
 import { usePartialSection } from "deco/hooks/usePartialSection.ts";
-import { ComponentProps, Fragment } from "preact";
+import { ComponentChildren, Fragment } from "preact";
 import { useId } from "site/sdk/useId.ts";
 
 export interface CTA {
@@ -37,7 +37,7 @@ export interface Props {
 const DEFAULT_IMAGE =
   "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/4763/682eb374-def2-4e85-a45d-b3a7ff8a31a9";
 
-function Container({ children }: ComponentProps) {
+function Container({ children }: { children: ComponentChildren }) {
   return (
     <div class="container lg:mx-auto lg:py-14 mx-4 py-12 text-sm">
       <div class="space-y-8">{children}</div>

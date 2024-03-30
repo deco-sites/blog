@@ -9,7 +9,7 @@ export default defineApp(async (_req, ctx) => {
   return (
     <>
       {/* Include default fonts and css vars */}
-      <Theme />
+      <Theme colorScheme="any" />
 
       {/* Include Icons and manifest */}
       <Head>
@@ -27,7 +27,6 @@ export default defineApp(async (_req, ctx) => {
 
         {/* Install HTMX */}
         <script
-          async
           src="https://cdn.jsdelivr.net/npm/htmx.org@1.9.11"
           crossorigin="anonymous"
         />
