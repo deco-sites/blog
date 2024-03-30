@@ -44,7 +44,7 @@ export default function ImageWithParagraph({
   ],
 }: Props) {
   return (
-    <div class="lg:container md:max-w-6xl lg:mx-auto mx-4 text-sm">
+    <div class="container lg:mx-auto mx-4 text-sm">
       <div
         class={`flex ${
           PLACEMENT[placement]

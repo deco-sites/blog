@@ -40,7 +40,7 @@ export default function MainPost({
   },
 }: Props) {
   return (
-    <div class="lg:container lg:mx-auto lg:py-14 md:max-w-6xl mx-4 py-12 text-sm">
+    <div class="container lg:mx-auto lg:py-14 mx-4 py-12 text-sm">
       <div class="space-y-16">
         <a
           href={post.url}
