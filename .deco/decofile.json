@@ -216,7 +216,7 @@
     "buttonStyle": {
       "--border-btn": "1px",
       "--rounded-btn": "0.2rem",
-      "--btn-focus-scale": 0.95,
+      "--btn-focus-scale": "0.95",
       "--animation-btn": "0.25s"
     },
     "otherStyles": {
@@ -236,6 +236,18 @@
       "warning": "#ffc453",
       "error": "#d82c0d",
       "info": "#2e72d2"
+    },
+    "font": {
+      "__resolveType": "website/loaders/fonts/googleFonts.ts",
+      "fonts": [
+        {
+          "variations": [],
+          "family": "Albert Sans"
+        }
+      ]
     }
+  },
+  "Preview /sections/Hero.tsx": {
+    "__resolveType": "site/sections/Hero.tsx"
   }
 }
