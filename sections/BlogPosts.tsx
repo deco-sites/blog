@@ -2,7 +2,7 @@ import type { ImageWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
 import { usePartialSection } from "deco/hooks/usePartialSection.ts";
 import { ComponentChildren, Fragment } from "preact";
-import { useId } from "site/sdk/useId.ts";
+import { useId } from "../sdk/useId.ts";
 
 export interface CTA {
   text?: string;
