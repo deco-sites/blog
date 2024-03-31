@@ -249,5 +249,8 @@
     "theme": {
       "__resolveType": "Neutral"
     }
+  },
+  "blog": {
+    "__resolveType": "decohub/apps/blog.ts"
   }
 }
