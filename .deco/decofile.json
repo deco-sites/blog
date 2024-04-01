@@ -191,12 +191,19 @@
       ]
     }
   },
+  "blog": {
+    "__resolveType": "decohub/apps/blog.ts"
+  },
   "decohub": {
     "__resolveType": "site/apps/decohub.ts",
     "apps": []
   },
   "hero": {
     "__resolveType": "site/sections/Hero.tsx"
+  },
+  "htmx": {
+    "__resolveType": "decohub/apps/htmx.ts",
+    "version": "1.9.11"
   },
   "pages-home-5afd25174424": {
     "name": "Home",
@@ -222,7 +229,11 @@
   },
   "site": {
     "__resolveType": "site/apps/site.ts",
-    "routes": [],
+    "routes": [
+      {
+        "__resolveType": "website/loaders/pages.ts"
+      }
+    ],
     "seo": {
       "titleTemplate": "%s",
       "descriptionTemplate": "%s",
@@ -238,11 +249,26 @@
     },
     "firstByteThresholdMS": false
   },
-  "blog": {
-    "__resolveType": "decohub/apps/blog.ts"
-  },
-  "htmx": {
-    "__resolveType": "decohub/apps/htmx.ts",
-    "version": "1.9.11"
+  "pages-Home-409003": {
+    "name": "Home",
+    "path": "/",
+    "sections": [
+      {
+        "__resolveType": "site/sections/Header.tsx"
+      },
+      {
+        "__resolveType": "site/sections/Hero.tsx"
+      },
+      {
+        "__resolveType": "site/sections/MainPost.tsx"
+      },
+      {
+        "__resolveType": "site/sections/BlogPosts.tsx"
+      },
+      {
+        "__resolveType": "site/sections/Footer.tsx"
+      }
+    ],
+    "__resolveType": "website/pages/Page.tsx"
   }
 }
