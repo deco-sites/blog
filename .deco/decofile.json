@@ -78,7 +78,9 @@
     }
   },
   "Preview /sections/Hero.tsx": {
-    "__resolveType": "site/sections/Hero.tsx"
+    "__resolveType": "site/sections/Hero.tsx",
+    "placement": "left",
+    "cta": []
   },
   "Serene Coastline": {
     "__resolveType": "site/sections/Theme/Theme.tsx",
@@ -323,5 +325,18 @@
       "subtitle": "Blog subtitle will go here",
       "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/4763/682eb374-def2-4e85-a45d-b3a7ff8a31a9"
     }
+  },
+  "Preview /sections/Faq.tsx": {
+    "__resolveType": "site/sections/Faq.tsx",
+    "questions": []
+  },
+  "Preview /sections/Footer.tsx": {
+    "__resolveType": "site/sections/Footer.tsx",
+    "links": [],
+    "bottomLinks": [],
+    "social": []
+  },
+  "Preview /sections/Testimonials.tsx": {
+    "__resolveType": "site/sections/Testimonials.tsx"
   }
 }
