@@ -19,14 +19,15 @@ const BLOCKQUOTE_STYLES =
 
 const CONTENT_STYLES = `max-w-3xl mx-auto ${PARAGRAPH_STYLES} ${HEADING_STYLES} ${CODE_BLOCK_STYLES} ${IMAGE_STYLES} ${BLOCKQUOTE_STYLES}`;
 
+const DEFAULT_AVATAR = "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/1527/7286de42-e9c5-4fcb-ae8b-b992eea4b78e"
+
 const DEFAULT_PROPS = {
   title: "Blog title heading will go here",
   authors: [
     {
       name: "Full name",
       email: "author@deco.cx",
-      avatar:
-        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/1527/7286de42-e9c5-4fcb-ae8b-b992eea4b78e",
+      avatar: DEFAULT_AVATAR,
     },
   ],
   date: "2022-01-01",
@@ -125,7 +126,7 @@ export default function BlogPost({ post }: Props) {
           <Image
             className="object-cover w-14 h-14 rounded-full"
             alt={authors[0]?.alt}
-            src={authors[0]?.avatar || ""}
+            src={authors[0]?.avatar || DEFAULT_AVATAR}
             width={56}
             height={56}
           />
