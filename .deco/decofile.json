@@ -278,5 +278,31 @@
       "name": "Name of the Author",
       "email": "author@deco.cx"
     }
+  },
+  "Preview /sections/BlogPost.tsx": {
+    "__resolveType": "site/sections/BlogPost.tsx"
+  },
+  "pages-Blog%20Post%20Page-827555": {
+    "name": "Blog Post Page",
+    "path": "/blog/:slug",
+    "sections": [
+      {
+        "__resolveType": "site/sections/Header.tsx"
+      },
+      {
+        "__resolveType": "site/sections/BlogPost.tsx",
+        "post": {
+          "__resolveType": "blog/loaders/BlogPostItem.ts",
+          "slug": {
+            "__resolveType": "website/functions/requestToParam.ts",
+            "param": "slug"
+          }
+        }
+      },
+      {
+        "__resolveType": "site/sections/Footer.tsx"
+      }
+    ],
+    "__resolveType": "website/pages/Page.tsx"
   }
 }
