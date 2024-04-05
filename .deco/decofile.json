@@ -270,5 +270,13 @@
       }
     ],
     "__resolveType": "website/pages/Page.tsx"
+  },
+  "collections/blog/authors/07ae63fcc4c0": {
+    "name": "collections/blog/authors/07ae63fcc4c0",
+    "__resolveType": "blog/loaders/Author.ts",
+    "author": {
+      "name": "Name of the Author",
+      "email": "author@deco.cx"
+    }
   }
 }
