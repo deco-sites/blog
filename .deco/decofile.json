@@ -251,28 +251,6 @@
     },
     "firstByteThresholdMS": false
   },
-  "pages-Home-409003": {
-    "name": "Home",
-    "path": "/",
-    "sections": [
-      {
-        "__resolveType": "site/sections/Header.tsx"
-      },
-      {
-        "__resolveType": "site/sections/Hero.tsx"
-      },
-      {
-        "__resolveType": "site/sections/MainPost.tsx"
-      },
-      {
-        "__resolveType": "site/sections/BlogPosts.tsx"
-      },
-      {
-        "__resolveType": "site/sections/Footer.tsx"
-      }
-    ],
-    "__resolveType": "website/pages/Page.tsx"
-  },
   "collections/blog/authors/07ae63fcc4c0": {
     "name": "collections/blog/authors/07ae63fcc4c0",
     "__resolveType": "blog/loaders/Author.ts",
