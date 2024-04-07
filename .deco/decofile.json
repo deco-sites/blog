@@ -96,7 +96,8 @@
   "Preview /sections/Hero.tsx": {
     "__resolveType": "site/sections/Hero.tsx",
     "placement": "left",
-    "cta": []
+    "cta": [],
+    "title": "Click here to tweak this text however you want."
   },
   "Preview /sections/Testimonials.tsx": {
     "__resolveType": "site/sections/Testimonials.tsx"
@@ -302,7 +303,9 @@
         "__resolveType": "site/sections/Header.tsx"
       },
       {
-        "__resolveType": "site/sections/Hero.tsx"
+        "__resolveType": "site/sections/Hero.tsx",
+        "title": "<p>Click here to tweak this text however you want.</p>",
+        "description": "This text is entirely editable, tailor it freely."
       },
       {
         "__resolveType": "site/sections/MainPost.tsx",
