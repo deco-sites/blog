@@ -2,6 +2,7 @@ import type { ImageWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
 import { usePartialSection } from "deco/hooks/usePartialSection.ts";
 import { ComponentChildren, Fragment } from "preact";
+import { BlogPost } from "apps/blog/types.ts";
 import { useId } from "../sdk/useId.ts";
 
 export interface CTA {
@@ -22,7 +23,7 @@ export interface Post {
 
 export interface Props {
   cta?: CTA;
-  posts?: Post[];
+  posts?: BlogPost[] | null;
   pagination?: {
     /**
      * @title First page
@@ -32,7 +33,7 @@ export interface Props {
     /** @title items per page */
     perPage?: number;
   };
-}
+} 
 
 const DEFAULT_IMAGE =
   "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/4763/682eb374-def2-4e85-a45d-b3a7ff8a31a9";
@@ -49,147 +50,147 @@ export default function BlogPosts({
   cta = { text: "Show more" },
   posts = [
     {
-      url: "/",
+      slug: "/",
       title: "Title of blogpost #1",
-      author: "Name of the author",
+      authors: [{ name: "Name of the author", email: "author@deco.cx" }],
       excerpt:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
       image: DEFAULT_IMAGE,
       date: "01 Apr 2024",
-      readingTime: "10 min",
-      tags: ["Tag #1", "Tag #2", "Tag #3"],
+      categories: [{ name: "Tag#1", slug: "tag-1" }],
+      content: "Blog Post Content"
     },
     {
-      url: "/",
+      slug: "/",
       title: "Title of blogpost #2",
-      author: "Name of the author",
+      authors: [{ name: "Name of the author", email: "author@deco.cx" }],
       excerpt:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
       image: DEFAULT_IMAGE,
       date: "01 Apr 2024",
-      readingTime: "10 min",
-      tags: ["Tag #1", "Tag #2", "Tag #3"],
+      categories: [{ name: "Tag#1", slug: "tag-1" }],
+      content: "Blog Post Content"
     },
     {
-      url: "/",
+      slug: "/",
       title: "Title of blogpost #3",
-      author: "Name of the author",
+      authors: [{ name: "Name of the author", email: "author@deco.cx" }],
       excerpt:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
       image: DEFAULT_IMAGE,
       date: "01 Apr 2024",
-      readingTime: "10 min",
-      tags: ["Tag #1", "Tag #2", "Tag #3"],
+      categories: [{ name: "Tag#1", slug: "tag-1" }],
+      content: "Blog Post Content"
     },
     {
-      url: "/",
+      slug: "/",
       title: "Title of blogpost #4",
-      author: "Name of the author",
+      authors: [{ name: "Name of the author", email: "author@deco.cx" }],
       excerpt:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
       image: DEFAULT_IMAGE,
       date: "01 Apr 2024",
-      readingTime: "10 min",
-      tags: ["Tag #1", "Tag #2", "Tag #3"],
+      categories: [{ name: "Tag#1", slug: "tag-1" }],
+      content: "Blog Post Content"
     },
     {
-      url: "/",
+      slug: "/",
       title: "Title of blogpost #5",
-      author: "Name of the author",
+      authors: [{ name: "Name of the author", email: "author@deco.cx" }],
       excerpt:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
       image: DEFAULT_IMAGE,
       date: "01 Apr 2024",
-      readingTime: "10 min",
-      tags: ["Tag #1", "Tag #2", "Tag #3"],
+      categories: [{ name: "Tag#1", slug: "tag-1" }],
+      content: "Blog Post Content"
     },
     {
-      url: "/",
+      slug: "/",
       title: "Title of blogpost #6",
-      author: "Name of the author",
+      authors: [{ name: "Name of the author", email: "author@deco.cx" }],
       excerpt:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
       image: DEFAULT_IMAGE,
       date: "01 Apr 2024",
-      readingTime: "10 min",
-      tags: ["Tag #1", "Tag #2", "Tag #3"],
+      categories: [{ name: "Tag#1", slug: "tag-1" }],
+      content: "Blog Post Content"
     },
     {
-      url: "/",
+      slug: "/",
       title: "Title of blogpost #7",
-      author: "Name of the author",
+      authors: [{ name: "Name of the author", email: "author@deco.cx" }],
       excerpt:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
       image: DEFAULT_IMAGE,
       date: "01 Apr 2024",
-      readingTime: "10 min",
-      tags: ["Tag #1", "Tag #2", "Tag #3"],
+      categories: [{ name: "Tag#1", slug: "tag-1" }],
+      content: "Blog Post Content"
     },
     {
-      url: "/",
+      slug: "/",
       title: "Title of blogpost #8",
-      author: "Name of the author",
+      authors: [{ name: "Name of the author", email: "author@deco.cx" }],
       excerpt:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
       image: DEFAULT_IMAGE,
       date: "01 Apr 2024",
-      readingTime: "10 min",
-      tags: ["Tag #1", "Tag #2", "Tag #3"],
+      categories: [{ name: "Tag#1", slug: "tag-1" }],
+      content: "Blog Post Content"
     },
     {
-      url: "/",
+      slug: "/",
       title: "Title of blogpost #9",
-      author: "Name of the author",
+      authors: [{ name: "Name of the author", email: "author@deco.cx" }],
       excerpt:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
       image: DEFAULT_IMAGE,
       date: "01 Apr 2024",
-      readingTime: "10 min",
-      tags: ["Tag #1", "Tag #2", "Tag #3"],
+      categories: [{ name: "Tag#1", slug: "tag-1" }],
+      content: "Blog Post Content"
     },
     {
-      url: "/",
+      slug: "/",
       title: "Title of blogpost #10",
-      author: "Name of the author",
+      authors: [{ name: "Name of the author", email: "author@deco.cx" }],
       excerpt:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
       image: DEFAULT_IMAGE,
       date: "01 Apr 2024",
-      readingTime: "10 min",
-      tags: ["Tag #1", "Tag #2", "Tag #3"],
+      categories: [{ name: "Tag#1", slug: "tag-1" }],
+      content: "Blog Post Content"
     },
     {
-      url: "/",
+      slug: "/",
       title: "Title of blogpost #11",
-      author: "Name of the author",
+      authors: [{ name: "Name of the author", email: "author@deco.cx" }],
       excerpt:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
       image: DEFAULT_IMAGE,
       date: "01 Apr 2024",
-      readingTime: "10 min",
-      tags: ["Tag #1", "Tag #2", "Tag #3"],
+      categories: [{ name: "Tag#1", slug: "tag-1" }],
+      content: "Blog Post Content"
     },
     {
-      url: "/",
+      slug: "/",
       title: "Title of blogpost #12",
-      author: "Name of the author",
+      authors: [{ name: "Name of the author", email: "author@deco.cx" }],
       excerpt:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
       image: DEFAULT_IMAGE,
       date: "01 Apr 2024",
-      readingTime: "10 min",
-      tags: ["Tag #1", "Tag #2", "Tag #3"],
+      categories: [{ name: "Tag#1", slug: "tag-1" }],
+      content: "Blog Post Content"
     },
     {
-      url: "/",
+      slug: "/",
       title: "Title of blogpost #13",
-      author: "Name of the author",
+      authors: [{ name: "Name of the author", email: "author@deco.cx" }],
       excerpt:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
       image: DEFAULT_IMAGE,
       date: "01 Apr 2024",
-      readingTime: "10 min",
-      tags: ["Tag #1", "Tag #2", "Tag #3"],
+      categories: [{ name: "Tag#1", slug: "tag-1" }],
+      content: "Blog Post Content"
     },
   ],
   pagination: {
@@ -212,6 +213,14 @@ export default function BlogPosts({
     },
   })["f-partial"];
 
+  function calculateReadingTime(words: number): string {
+    const wordsPerMinute = 250;
+    const estimatedTimeMinutes = words / wordsPerMinute;
+
+    const roundedReadingTime = Math.round(estimatedTimeMinutes);
+    return `${roundedReadingTime} min`;
+  }
+
   const ContainerComponent = page === 0 ? Container : Fragment;
 
   return (
@@ -220,7 +229,7 @@ export default function BlogPosts({
         <div class="gap-8 grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2">
           {posts.slice(from, to).map((post) => (
             <a
-              href={post.url}
+              href={`/blog/${post.slug}`}
               class="border border-secondary overflow-hidden rounded-lg"
             >
               <Image
@@ -234,22 +243,28 @@ export default function BlogPosts({
                 loading="lazy"
               />
               <div class="p-6 space-y-4">
-                <div class="font-semibold">{post.readingTime}</div>
+                <div class="font-semibold">{calculateReadingTime(post.content.split(" ").length)}</div>
                 <div class="space-y-2">
                   <h3 class="text-2xl">{post.title}</h3>
                   <p class="text-base">{post.excerpt}</p>
                 </div>
                 <div class="flex flex-wrap gap-2">
-                  {post.tags?.map((tag) => (
+                  {post.categories?.map((category) => (
                     <div class="badge badge-lg badge-primary text-xs">
-                      {tag}
+                      {category.name}
                     </div>
                   ))}
                 </div>
                 <div class="flex flex-wrap gap-2">
-                  <span>{post.date}</span>
+                  <span>{post.date
+                    ? new Date(post.date).toLocaleDateString("en-US", {
+                      month: "long",
+                      day: "numeric",
+                      year: "numeric",
+                    })
+                    : ""}</span>
                   <span>•</span>
-                  <span>{post.author}</span>
+                  <span>{post.authors[0]?.name}</span>
                 </div>
               </div>
             </a>
