@@ -1,11 +1,11 @@
-import { BlogPost } from "apps/blog/loaders/Blogpost.ts";
+import { BlogPostPage } from "apps/blog/types.ts";
 import Image from "apps/website/components/Image.tsx";
 
 interface Props {
   /**
    * @description The description of name.
    */
-  post?: BlogPost | null;
+  page?: BlogPostPage | null;
 }
 
 const PARAGRAPH_STYLES = "[&_p]:leading-[150%] [&_*]:mb-4";
@@ -109,8 +109,8 @@ function SocialIcons() {
   );
 }
 
-export default function BlogPost({ post }: Props) {
-  const { title, authors, image, date, content } = post || DEFAULT_PROPS;
+export default function BlogPost({ page }: Props) {
+  const { title, authors, image, date, content } = page?.post || DEFAULT_PROPS;
 
   const formattedDate = new Date(date).toLocaleDateString("en-US", {
     year: "numeric",

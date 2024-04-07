@@ -226,7 +226,7 @@
     "post": {
       "authors": [
         {
-          "name": "Name of the author",
+          "name": "Name of the Author",
           "email": "author@deco.cx",
           "avatar": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/1527/7286de42-e9c5-4fcb-ae8b-b992eea4b78e"
         }
@@ -235,8 +235,9 @@
       "slug": "hello-blog",
       "date": "2024-04-10",
       "title": "Blog title heading will go here",
-      "subtitle": "Blog subtitle will go here",
-      "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/4763/682eb374-def2-4e85-a45d-b3a7ff8a31a9"
+      "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/4763/682eb374-def2-4e85-a45d-b3a7ff8a31a9",
+      "categories": [],
+      "excerpt": "Blog subtitle will go here"
     }
   },
   "decohub": {
@@ -255,6 +256,12 @@
     "path": "/blog/:slug",
     "sections": [
       {
+        "__resolveType": "blog/sections/Seo/SeoBlogPost.tsx",
+        "jsonLD": {
+          "__resolveType": "BlogPostPage Loader"
+        }
+      },
+      {
         "__resolveType": "site/sections/Header.tsx"
       },
       {
@@ -265,6 +272,9 @@
             "__resolveType": "website/functions/requestToParam.ts",
             "param": "slug"
           }
+        },
+        "page": {
+          "__resolveType": "BlogPostPage Loader"
         }
       },
       {
@@ -318,6 +328,13 @@
     "firstByteThresholdMS": false,
     "theme": {
       "__resolveType": "Neutral"
+    }
+  },
+  "BlogPostPage Loader": {
+    "__resolveType": "blog/loaders/BlogPostPage.ts",
+    "slug": {
+      "__resolveType": "website/functions/requestToParam.ts",
+      "param": "slug"
     }
   }
 }
