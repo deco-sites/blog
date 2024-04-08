@@ -1,4 +1,4 @@
-import { BlogPostPage } from "apps/blog/types.ts";
+import { BlogPostPage, BlogPost } from "apps/blog/types.ts";
 import Image from "apps/website/components/Image.tsx";
 
 interface Props {
@@ -21,8 +21,9 @@ const CONTENT_STYLES = `max-w-3xl mx-auto ${PARAGRAPH_STYLES} ${HEADING_STYLES} 
 
 const DEFAULT_AVATAR = "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/1527/7286de42-e9c5-4fcb-ae8b-b992eea4b78e"
 
-const DEFAULT_PROPS = {
+const DEFAULT_PROPS: BlogPost = {
   title: "Blog title heading will go here",
+  excerpt: "Excerpt goes here",
   authors: [
     {
       name: "Full name",
@@ -30,6 +31,7 @@ const DEFAULT_PROPS = {
       avatar: DEFAULT_AVATAR,
     },
   ],
+  categories: [],
   date: "2022-01-01",
   image:
     "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/4763/682eb374-def2-4e85-a45d-b3a7ff8a31a9",
@@ -125,7 +127,7 @@ export default function BlogPost({ page }: Props) {
         <div className="flex items-center gap-4">
           <Image
             className="object-cover w-14 h-14 rounded-full"
-            alt={authors[0]?.alt}
+            alt={authors[0]?.name}
             src={authors[0]?.avatar || DEFAULT_AVATAR}
             width={56}
             height={56}
@@ -171,16 +173,18 @@ export default function BlogPost({ page }: Props) {
         <div className="flex items-center gap-4">
           <Image
             className="object-cover w-14 h-14 rounded-full"
-            alt={authors[0]?.alt}
+            alt={authors[0]?.name}
             src={authors[0]?.avatar || ""}
             width={56}
             height={56}
           />
           <div className="flex flex-col">
             <p className="font-semibold text-base">
-              {authors.map((author) => author.name).join(", ")}
+              {authors[0].name}
             </p>
-            <p className="text-base">Job title, Company name</p>
+            <p className="text-base">
+              {`${authors[0].jobTitle ?? "Job Title"}, ${authors[0].company || "Company"}`}
+            </p>
           </div>
         </div>
       </div>

@@ -6,6 +6,13 @@
     "title": "FAQs",
     "__resolveType": "site/sections/Faq.tsx"
   },
+  "Footer": {
+    "__resolveType": "site/sections/Footer.tsx",
+    "links": [],
+    "bottomLinks": [],
+    "social": [],
+    "subscribe": {}
+  },
   "Groovy Vibes": {
     "__resolveType": "site/sections/Theme/Theme.tsx",
     "colorScheme": "any",
@@ -41,6 +48,13 @@
           "family": "Shrikhand"
         }
       ]
+    }
+  },
+  "Header": {
+    "__resolveType": "site/sections/Header.tsx",
+    "navigation": {
+      "links": [],
+      "buttons": []
     }
   },
   "Neutral": {
@@ -237,7 +251,10 @@
     "__resolveType": "blog/loaders/Author.ts",
     "author": {
       "name": "Name of the Author",
-      "email": "author@deco.cx"
+      "email": "author@deco.cx",
+      "jobTitle": "Author",
+      "company": "deco.cx",
+      "avatar": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/1527/7286de42-e9c5-4fcb-ae8b-b992eea4b78e"
     }
   },
   "collections/blog/categories/295e9e7730f9": {
@@ -515,19 +532,5 @@
     "theme": {
       "__resolveType": "Neutral"
     }
-  },
-  "Header": {
-    "__resolveType": "site/sections/Header.tsx",
-    "navigation": {
-      "links": [],
-      "buttons": []
-    }
-  },
-  "Footer": {
-    "__resolveType": "site/sections/Footer.tsx",
-    "links": [],
-    "bottomLinks": [],
-    "social": [],
-    "subscribe": {}
   }
 }
