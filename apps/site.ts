@@ -21,6 +21,7 @@ export default function Site(
     state,
     manifest,
     dependencies: [
+      website(state),
       blog(state),
     ],
   };
