@@ -1,4 +1,5 @@
 import { App, AppContext as AC } from "deco/mod.ts";
+import blog from "apps/blog/mod.ts";
 import website, { Props } from "apps/website/mod.ts";
 
 import manifest, { Manifest } from "../manifest.gen.ts";
@@ -20,7 +21,7 @@ export default function Site(
     state,
     manifest,
     dependencies: [
-      website(state),
+      blog(state),
     ],
   };
 }

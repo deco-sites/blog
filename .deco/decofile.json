@@ -441,12 +441,6 @@
     "path": "/blog/:slug",
     "sections": [
       {
-        "__resolveType": "blog/sections/Seo/SeoBlogPost.tsx",
-        "jsonLD": {
-          "__resolveType": "BlogPostPage Loader"
-        }
-      },
-      {
         "__resolveType": "site/sections/Header.tsx"
       },
       {
@@ -470,7 +464,17 @@
         "__resolveType": "site/sections/Footer.tsx"
       }
     ],
-    "__resolveType": "website/pages/Page.tsx"
+    "__resolveType": "website/pages/Page.tsx",
+    "seo": {
+      "__resolveType": "blog/sections/Seo/SeoBlogPost.tsx",
+      "jsonLD": {
+        "__resolveType": "blog/loaders/BlogPostPage.ts",
+        "slug": {
+          "__resolveType": "website/functions/requestToParam.ts",
+          "param": "slug"
+        }
+      }
+    }
   },
   "pages-home-5afd25174424": {
     "name": "Home",
