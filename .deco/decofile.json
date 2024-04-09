@@ -502,7 +502,11 @@
         "__resolveType": "site/sections/Footer.tsx"
       }
     ],
-    "__resolveType": "website/pages/Page.tsx"
+    "__resolveType": "website/pages/Page.tsx",
+    "seo": {
+      "__resolveType": "website/sections/Seo/SeoV2.tsx",
+      "type": "website"
+    }
   },
   "site": {
     "__resolveType": "site/apps/site.ts",
@@ -512,7 +516,7 @@
       }
     ],
     "seo": {
-      "titleTemplate": "Blog | deco.cx",
+      "titleTemplate": "%s | deco.cx",
       "descriptionTemplate": "%s | Deco.cx",
       "type": "website",
       "title": "Blog",
