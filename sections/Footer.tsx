@@ -12,10 +12,10 @@ export interface Items {
 }
 
 export interface Subscribe {
-  title: string;
-  description: string;
+  title?: string;
+  description?: string;
   /** @format rich-text */
-  instructions: string;
+  instructions?: string;
 }
 
 export interface Social {
