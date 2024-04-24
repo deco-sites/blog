@@ -112,13 +112,22 @@
     "__resolveType": "site/sections/Footer.tsx",
     "links": [],
     "bottomLinks": [],
-    "social": []
+    "social": [],
+    "subscribe": {}
+  },
+  "Preview /sections/Header.tsx": {
+    "__resolveType": "site\\sections\\Header.tsx"
   },
   "Preview /sections/Hero.tsx": {
     "__resolveType": "site/sections/Hero.tsx",
     "placement": "left",
     "cta": [],
     "title": "Click here to tweak this text however you want."
+  },
+  "Preview /sections/ImageWithParagraph.tsx": {
+    "__resolveType": "site/sections/ImageWithParagraph.tsx",
+    "placement": "left",
+    "cta": []
   },
   "Preview /sections/MainPost.tsx": {
     "__resolveType": "site/sections/MainPost.tsx",
@@ -131,6 +140,9 @@
   },
   "Preview /sections/Testimonials.tsx": {
     "__resolveType": "site/sections/Testimonials.tsx"
+  },
+  "Preview site/sections/Hero.tsx": {
+    "__resolveType": "site/sections/Hero.tsx"
   },
   "Serene Coastline": {
     "__resolveType": "site/sections/Theme/Theme.tsx",
@@ -481,7 +493,7 @@
     "path": "/",
     "sections": [
       {
-        "__resolveType": "site/sections/Header.tsx"
+        "__resolveType": "Header"
       },
       {
         "__resolveType": "site/sections/Hero.tsx",
@@ -503,7 +515,7 @@
         }
       },
       {
-        "__resolveType": "site/sections/Footer.tsx"
+        "__resolveType": "Footer"
       }
     ],
     "__resolveType": "website/pages/Page.tsx",
