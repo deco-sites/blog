@@ -1,6 +1,6 @@
 import type { ImageWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
-import { usePartialSection } from "deco/hooks/usePartialSection.ts";
+import { useSection } from "deco/hooks/useSection.ts";
 import { ComponentChildren, Fragment } from "preact";
 import { BlogPost } from "apps/blog/types.ts";
 import { useId } from "../sdk/useId.ts";
@@ -33,7 +33,7 @@ export interface Props {
     /** @title items per page */
     perPage?: number;
   };
-} 
+}
 
 const DEFAULT_IMAGE =
   "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/4763/682eb374-def2-4e85-a45d-b3a7ff8a31a9";
@@ -58,7 +58,7 @@ export default function BlogPosts({
       image: DEFAULT_IMAGE,
       date: "01 Apr 2024",
       categories: [{ name: "Tag#1", slug: "tag-1" }],
-      content: "Blog Post Content"
+      content: "Blog Post Content",
     },
     {
       slug: "/",
@@ -69,7 +69,7 @@ export default function BlogPosts({
       image: DEFAULT_IMAGE,
       date: "01 Apr 2024",
       categories: [{ name: "Tag#1", slug: "tag-1" }],
-      content: "Blog Post Content"
+      content: "Blog Post Content",
     },
     {
       slug: "/",
@@ -80,7 +80,7 @@ export default function BlogPosts({
       image: DEFAULT_IMAGE,
       date: "01 Apr 2024",
       categories: [{ name: "Tag#1", slug: "tag-1" }],
-      content: "Blog Post Content"
+      content: "Blog Post Content",
     },
     {
       slug: "/",
@@ -91,7 +91,7 @@ export default function BlogPosts({
       image: DEFAULT_IMAGE,
       date: "01 Apr 2024",
       categories: [{ name: "Tag#1", slug: "tag-1" }],
-      content: "Blog Post Content"
+      content: "Blog Post Content",
     },
     {
       slug: "/",
@@ -102,7 +102,7 @@ export default function BlogPosts({
       image: DEFAULT_IMAGE,
       date: "01 Apr 2024",
       categories: [{ name: "Tag#1", slug: "tag-1" }],
-      content: "Blog Post Content"
+      content: "Blog Post Content",
     },
     {
       slug: "/",
@@ -113,7 +113,7 @@ export default function BlogPosts({
       image: DEFAULT_IMAGE,
       date: "01 Apr 2024",
       categories: [{ name: "Tag#1", slug: "tag-1" }],
-      content: "Blog Post Content"
+      content: "Blog Post Content",
     },
     {
       slug: "/",
@@ -124,7 +124,7 @@ export default function BlogPosts({
       image: DEFAULT_IMAGE,
       date: "01 Apr 2024",
       categories: [{ name: "Tag#1", slug: "tag-1" }],
-      content: "Blog Post Content"
+      content: "Blog Post Content",
     },
     {
       slug: "/",
@@ -135,7 +135,7 @@ export default function BlogPosts({
       image: DEFAULT_IMAGE,
       date: "01 Apr 2024",
       categories: [{ name: "Tag#1", slug: "tag-1" }],
-      content: "Blog Post Content"
+      content: "Blog Post Content",
     },
     {
       slug: "/",
@@ -146,7 +146,7 @@ export default function BlogPosts({
       image: DEFAULT_IMAGE,
       date: "01 Apr 2024",
       categories: [{ name: "Tag#1", slug: "tag-1" }],
-      content: "Blog Post Content"
+      content: "Blog Post Content",
     },
     {
       slug: "/",
@@ -157,7 +157,7 @@ export default function BlogPosts({
       image: DEFAULT_IMAGE,
       date: "01 Apr 2024",
       categories: [{ name: "Tag#1", slug: "tag-1" }],
-      content: "Blog Post Content"
+      content: "Blog Post Content",
     },
     {
       slug: "/",
@@ -168,7 +168,7 @@ export default function BlogPosts({
       image: DEFAULT_IMAGE,
       date: "01 Apr 2024",
       categories: [{ name: "Tag#1", slug: "tag-1" }],
-      content: "Blog Post Content"
+      content: "Blog Post Content",
     },
     {
       slug: "/",
@@ -179,7 +179,7 @@ export default function BlogPosts({
       image: DEFAULT_IMAGE,
       date: "01 Apr 2024",
       categories: [{ name: "Tag#1", slug: "tag-1" }],
-      content: "Blog Post Content"
+      content: "Blog Post Content",
     },
     {
       slug: "/",
@@ -190,7 +190,7 @@ export default function BlogPosts({
       image: DEFAULT_IMAGE,
       date: "01 Apr 2024",
       categories: [{ name: "Tag#1", slug: "tag-1" }],
-      content: "Blog Post Content"
+      content: "Blog Post Content",
     },
   ],
   pagination: {
@@ -205,13 +205,12 @@ export default function BlogPosts({
   const postList = useId();
 
   // Get the HTMX link for this section
-  const fetchMoreLink = usePartialSection({
-    mode: "append",
+  const fetchMoreLink = useSection({
     // Renders this section with the next page
     props: {
       pagination: { perPage, page: page + 1 },
     },
-  })["f-partial"];
+  });
 
   function calculateReadingTime(words: number): string {
     const wordsPerMinute = 250;
@@ -243,7 +242,9 @@ export default function BlogPosts({
                 loading="lazy"
               />
               <div class="p-6 space-y-4">
-                <div class="font-semibold">{calculateReadingTime(post.content.split(" ").length)}</div>
+                <div class="font-semibold">
+                  {calculateReadingTime(post.content.split(" ").length)}
+                </div>
                 <div class="space-y-2">
                   <h3 class="text-2xl">{post.title}</h3>
                   <p class="text-base">{post.excerpt}</p>
@@ -256,13 +257,15 @@ export default function BlogPosts({
                   ))}
                 </div>
                 <div class="flex flex-wrap gap-2">
-                  <span>{post.date
-                    ? new Date(post.date).toLocaleDateString("en-US", {
-                      month: "long",
-                      day: "numeric",
-                      year: "numeric",
-                    })
-                    : ""}</span>
+                  <span>
+                    {post.date
+                      ? new Date(post.date).toLocaleDateString("en-US", {
+                        month: "long",
+                        day: "numeric",
+                        year: "numeric",
+                      })
+                      : ""}
+                  </span>
                   <span>•</span>
                   <span>{post.authors[0]?.name}</span>
                 </div>
