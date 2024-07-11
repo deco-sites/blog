@@ -1,4 +1,4 @@
-# Blog — deco.cx template
+# Blog — deco.cx template 
 
 Welcome to your [deco.cx](https://deco.cx) site!
 
@@ -19,9 +19,9 @@ Access `http://localhost:8000` to see your site.
 
 ## Recommended extensions (VSCode)
 
-[Deno](https://marketplace.visualstudio.com/items?itemName=denoland.vscode-deno)
+- [Deno](https://marketplace.visualstudio.com/items?itemName=denoland.vscode-deno)
 
-[Tailwind IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
+- [Tailwind IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
 
 ## Dependencies
 
@@ -33,10 +33,18 @@ deno task update
 
 ## Help
 
-📚 [Docs](https://www.deco.cx/docs/en/overview)
+- 📚 [Docs](https://www.deco.cx/docs/en/overview)
 
-🚨 [Troubleshooting](https://deco.cx/docs/en/reference/troubleshooting)
+- 🚨 [Troubleshooting](https://deco.cx/docs/en/reference/troubleshooting)
 
-🔤 [Glossary](https://deco.cx/glossary)
+- 🔤 [Glossary](https://deco.cx/glossary)
 
-👥 [Discord](https://deco.cx/discord)
+- 👥 [Discord](https://deco.cx/discord)
+
+## Contributing
+
+We are working on the instructions, for now feel free to contribute to this project.
+
+Take a look on this ones:
+- [deco](https://github.com/deco-cx/deco/)
+- [apps](https://github.com/deco-cx/apps/)
