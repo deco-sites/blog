@@ -226,7 +226,7 @@ export default function BlogPosts({
     <ContainerComponent>
       <>
         <div class="gap-8 grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2">
-          {posts.slice(from, to).map((post) => (
+          {posts?.slice(from, to).map((post) => (
             <a
               href={`/blog/${post.slug}`}
               class="border border-secondary overflow-hidden rounded-lg"
@@ -273,7 +273,7 @@ export default function BlogPosts({
             </a>
           ))}
         </div>
-        {to < posts.length && (
+        {posts && to < posts.length && (
           <div class="flex justify-center w-full" id={postList}>
             <button
               hx-get={fetchMoreLink}

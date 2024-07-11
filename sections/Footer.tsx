@@ -142,21 +142,31 @@ export default function Footer({
                   placeholder="Enter your email"
                   class="flex-auto input input-bordered input-primary"
                 />
-                <button type="submit" class="btn btn-outline font-normal" aria-label="Subscribe">
+                <button
+                  type="submit"
+                  class="btn btn-outline font-normal"
+                  aria-label="Subscribe"
+                >
                   Subscribe
                 </button>
               </div>
-              <p
-                class="text-xs"
-                dangerouslySetInnerHTML={{ __html: subscribe.instructions }}
-              >
-              </p>
+              {subscribe.instructions && (
+                <p
+                  class="text-xs"
+                  dangerouslySetInnerHTML={{ __html: subscribe.instructions }}
+                >
+                </p>
+              )}
             </form>
           </div>
         </div>
         <div class="border-primary border-t flex flex-col gap-4 items-center justify-between lg:flex-row lg:items-center py-8">
           <div class="flex flex-col gap-4 items-center lg:flex-row lg:gap-6">
-            <a href={madeWith?.href} class="flex items-center gap-2" target="_blank">
+            <a
+              href={madeWith?.href}
+              class="flex items-center gap-2"
+              target="_blank"
+            >
               <span>{madeWith?.label}</span>
               <Image
                 src={madeWith?.src || ""}

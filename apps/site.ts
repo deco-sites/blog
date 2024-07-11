@@ -5,6 +5,7 @@ import website, { Props } from "apps/website/mod.ts";
 import manifest, { Manifest } from "../manifest.gen.ts";
 
 type WebsiteApp = ReturnType<typeof website>;
+type BlogApp = ReturnType<typeof blog>;
 
 /**
  * @title Site
@@ -16,6 +17,7 @@ export default function Site(
   state: Props,
 ): App<Manifest, Props, [
   WebsiteApp,
+  BlogApp,
 ]> {
   return {
     state,
