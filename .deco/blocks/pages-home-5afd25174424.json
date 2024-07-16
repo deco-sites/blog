@@ -26,54 +26,6 @@
     },
     {
       "__resolveType": "Footer"
-    },
-    {
-      "__resolveType": "site/sections/Faq.tsx",
-      "questions": [
-        {
-          "title": "abc",
-          "answer": "<p>dc</p>"
-        },
-        {
-          "answer": "<p>dc</p>",
-          "title": "abc"
-        },
-        {
-          "answer": "<p>dc</p>",
-          "title": "abc"
-        },
-        {
-          "answer": "<p>dc</p>",
-          "title": "abc"
-        }
-      ]
-    },
-    {
-      "__resolveType": "site/sections/Testimonials.tsx",
-      "arrows": true,
-      "dots": true,
-      "slides": [
-        {
-          "content": {
-            "description": "abc"
-          }
-        },
-        {
-          "content": {
-            "description": "abc"
-          }
-        },
-        {
-          "content": {
-            "description": "abc"
-          }
-        },
-        {
-          "content": {
-            "description": "abc"
-          }
-        }
-      ]
     }
   ],
   "__resolveType": "website/pages/Page.tsx",
