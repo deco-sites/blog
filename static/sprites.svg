@@ -4,12 +4,16 @@
     <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
   </symbol>
   <symbol id="arrow_right"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor">
-    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.057 7.05721C11.5777 6.53651 12.4219 6.53651 12.9426 7.05721L20.9426 15.0572C21.4633 15.5779 21.4633 16.4221 20.9426 16.9428L12.9426 24.9428C12.4219 25.4635 11.5777 25.4635 11.057 24.9428C10.5363 24.4221 10.5363 23.5779 11.057 23.0572L18.1142 16L11.057 8.94283C10.5363 8.42213 10.5363 7.57791 11.057 7.05721Z"/>
+    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
   </symbol>
-  <symbol id="arrow_down" width="32" height="33" viewBox="0 0 32 33" fill="none"
-    xmlns="http://www.w3.org/2000/svg">
-    <path d="M8.17674 12.5577L8.17676 12.5577L8.5303 12.2041C8.53031 12.2041 8.53031 12.2041 8.53032 12.2041C8.62794 12.1065 8.78621 12.1065 8.88385 12.2041C8.88385 12.2041 8.88385 12.2041 8.88385 12.2041L15.6464 18.9667L16 19.3202L16.3535 18.9667L23.1161 12.2041C23.2138 12.1064 23.372 12.1064 23.4696 12.2041L23.8232 12.5577C23.9208 12.6553 23.9208 12.8135 23.8232 12.9112L16.1767 20.5577C16.0791 20.6553 15.9209 20.6553 15.8232 20.5577L8.17674 12.9112C8.17674 12.9112 8.17674 12.9112 8.17674 12.9112C8.07911 12.8135 8.07911 12.6553 8.17674 12.5577Z" fill="#18181B" stroke="#18181B" />
+  <symbol id="arrow_up"
+    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+  </symbol>
+  <symbol id="arrow_down"
+    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
   </symbol>
   <symbol id="facebook" width="24" height="25" viewBox="0 0 24 25" fill="none"
     xmlns="http://www.w3.org/2000/svg">

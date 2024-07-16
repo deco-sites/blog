@@ -2,9 +2,10 @@ import { asset } from "$fresh/runtime.ts";
 import type { JSX } from "preact";
 
 export type AvailableIcons =
+  | "arrow_up"
   | "arrow_left"
-  | "arrow_right"
   | "arrow_down"
+  | "arrow_right"
   | "facebook"
   | "facebook_outline"
   | "instagram"
