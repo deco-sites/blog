@@ -171,7 +171,7 @@ function Buttons() {
           <Icon
             class="text-base-content"
             size={24}
-            id="ArrowRight"
+            id="arrow_right"
             strokeWidth={3}
           />
         </Slider.PrevButton>
@@ -181,7 +181,7 @@ function Buttons() {
           <Icon
             class="text-base-content"
             size={24}
-            id="ArrowLeft"
+            id="arrow_left"
             strokeWidth={3}
           />
         </Slider.NextButton>

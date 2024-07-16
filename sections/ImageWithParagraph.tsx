@@ -1,5 +1,6 @@
 import type { ImageWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
+import Icon from "site/components/ui/Icon.tsx";
 
 export interface CTA {
   id?: string;
@@ -87,18 +88,7 @@ export default function ImageWithParagraph({
               >
                 {item?.text}
                 {item.style == "Ghost" && (
-                  <svg
-                    width="24"
-                    height="25"
-                    viewBox="0 0 24 25"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M9.70697 16.9767L15.414 11.2697L9.70697 5.56274L8.29297 6.97674L12.586 11.2697L8.29297 15.5627L9.70697 16.9767Z"
-                      fill="#18181B"
-                    />
-                  </svg>
+                  <Icon id="arrow_right" width={24} height={25} />
                 )}
               </a>
             ))}
