@@ -81,7 +81,12 @@ export default function BlogPosts({
               <summary class="text-lg cursor-pointer py-6 flex ">
                 <span class="flex-auto">{question.title}</span>
                 <span class="flex-none transition group-open:rotate-180">
-                  <Icon id="arrow_down" width={32} height={33} class="stroke-2" />
+                  <Icon
+                    id="ChevronDown"
+                    width={32}
+                    height={33}
+                    class="stroke-2"
+                  />
                 </span>
               </summary>
               <p

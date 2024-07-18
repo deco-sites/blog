@@ -88,7 +88,7 @@ export default function ImageWithParagraph({
               >
                 {item?.text}
                 {item.style == "Ghost" && (
-                  <Icon id="arrow_right" width={24} height={25} />
+                  <Icon id="ChevronRight" width={24} height={25} />
                 )}
               </a>
             ))}

@@ -47,16 +47,16 @@ function SocialIcons() {
   return (
     <div class="flex gap-2">
       <div class="bg-gray-200 rounded-full p-1">
-        <Icon id="link" size={24} />
+        <Icon id="Link" size={24} />
       </div>
       <div class="bg-gray-200 rounded-full p-1">
-        <Icon id="linkedin_outline" size={24} />
+        <Icon id="LinkedinOutline" size={24} />
       </div>
       <div class="bg-gray-200 rounded-full p-1">
-        <Icon id="twitter_outline" size={24} />
+        <Icon id="TwitterOutline" size={24} />
       </div>
       <div class="rounded-full bg-gray-200 p-1">
-        <Icon id="facebook_outline" size={24} />
+        <Icon id="FacebookOutline" size={24} />
       </div>
     </div>
   );
