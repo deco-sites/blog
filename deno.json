@@ -2,7 +2,7 @@
   "imports": {
     "site/": "./",
     "deco/": "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.86.5/",
-    "apps/": "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.54.4/",
+    "apps/": "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.54.5/",
     "$fresh/": "https://deno.land/x/fresh@1.6.8/",
     "preact": "npm:preact@10.23.1",
     "@preact/signals": "https://esm.sh/*@preact/signals@1.2.2",

@@ -25,7 +25,9 @@ export default function Site(
     dependencies: [
       website({
         ...state,
-        global: state.theme ? [...(state.global ?? []), state.theme] : state.global,
+        global: state.theme
+          ? [...(state.global ?? []), state.theme]
+          : state.global,
       }),
       blog(state),
     ],

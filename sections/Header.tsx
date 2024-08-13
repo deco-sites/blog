@@ -113,7 +113,7 @@ export default function Haader({
           </div>
         </label>
 
-        <ul class="hidden items-center justify-between lg:flex w-full">
+        <ul class="hidden items-center justify-between lg:flex">
           <ul class="flex">
             {navigation.links.map((link) => (
               <li>
