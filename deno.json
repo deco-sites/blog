@@ -38,7 +38,7 @@
     "simple-git": "npm:simple-git@^3.25.0"
   },
   "tasks": {
-    "start": "deno task bundle && deno run -A --unstable-http --env --config=deno.json https://deco.cx/run --build-cmd 'deno task bundle' -- deno task dev",
+    "start": "deno task bundle && deno run -A --unstable-http --env https://deco.cx/run --build-cmd 'deno task bundle' -- deno task dev",
     "gen": "deno run -A dev.ts --gen-only",
     "play": "USE_LOCAL_STORAGE_ONLY=true deno task start",
     "component": "deno eval 'import \"deco/scripts/component.ts\"'",
