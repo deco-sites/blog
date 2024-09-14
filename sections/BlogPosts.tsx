@@ -1,14 +1,12 @@
 import type { ImageWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
-import { useSection } from "deco/hooks/useSection.ts";
 import { ComponentChildren, Fragment } from "preact";
 import { BlogPost } from "apps/blog/types.ts";
 import { useId } from "../sdk/useId.ts";
-
+import { useSection as useSection } from "@deco/deco/hooks";
 export interface CTA {
   text?: string;
 }
-
 /** @title {{{title}}} */
 export interface Post {
   url?: string;
@@ -20,7 +18,6 @@ export interface Post {
   readingTime?: string;
   tags?: string[];
 }
-
 export interface Props {
   cta?: CTA;
   posts?: BlogPost[] | null;
@@ -34,29 +31,26 @@ export interface Props {
     perPage?: number;
   };
 }
-
-function Container({ children }: { children: ComponentChildren }) {
+function Container({ children }: {
+  children: ComponentChildren;
+}) {
   return (
     <div class="container lg:mx-auto lg:py-14 mx-2 py-12 text-sm">
       <div class="space-y-8">{children}</div>
     </div>
   );
 }
-
-export default function BlogPosts({
-  cta = { text: "Show more" },
-  posts,
-  pagination: {
-    page = 0,
-    perPage = 6,
-  } = {},
-}: Props) {
+export default function BlogPosts(
+  {
+    cta = { text: "Show more" },
+    posts,
+    pagination: { page = 0, perPage = 6 } = {},
+  }: Props,
+) {
   const from = perPage * page;
   const to = perPage * (page + 1);
-
   // It's boring to generate ids. Let's autogen them
   const postList = useId();
-
   // Get the HTMX link for this section
   const fetchMoreLink = useSection({
     // Renders this section with the next page
@@ -64,17 +58,13 @@ export default function BlogPosts({
       pagination: { perPage, page: page + 1 },
     },
   });
-
   function calculateReadingTime(words: number): string {
     const wordsPerMinute = 250;
     const estimatedTimeMinutes = words / wordsPerMinute;
-
     const roundedReadingTime = Math.round(estimatedTimeMinutes);
     return `${roundedReadingTime} min`;
   }
-
   const ContainerComponent = page === 0 ? Container : Fragment;
-
   return (
     <ContainerComponent>
       <>

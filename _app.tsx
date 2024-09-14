@@ -1,13 +1,10 @@
-import { asset, Head } from "deco/runtime/htmx/mod.ts";
 import { ComponentChildren } from "preact";
-
-export const Layout = (
-  { children, revision, hmrUniqueId }: {
-    children: ComponentChildren;
-    revision: string;
-    hmrUniqueId: string;
-  },
-) => {
+import { asset as asset, Head as Head } from "@deco/deco/htmx";
+export const Layout = ({ children, revision, hmrUniqueId }: {
+  children: ComponentChildren;
+  revision: string;
+  hmrUniqueId: string;
+}) => {
   return (
     <>
       {/* Include Icons and manifest */}
