@@ -86,7 +86,9 @@ export default function BlogPosts(
               />
               <div class="p-6 space-y-4">
                 <div class="font-semibold">
-                  {calculateReadingTime((post?.content ?? "").split(" ").length)}
+                  {calculateReadingTime(
+                    (post?.content ?? "").split(" ").length,
+                  )}
                 </div>
                 <div class="space-y-2">
                   <h3 class="text-2xl">{post.title}</h3>

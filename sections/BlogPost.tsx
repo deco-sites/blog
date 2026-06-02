@@ -1,6 +1,23 @@
-import { type BlogPost, BlogPostPage } from "apps/blog/types.ts";
+import { JSX } from "preact";
+import { type Author, type BlogPost, BlogPostPage } from "apps/blog/types.ts";
 import Image from "apps/website/components/Image.tsx";
 import Icon from "site/components/ui/Icon.tsx";
+import BlockImage from "apps/blog/sections/blocks/BlockImage.tsx";
+import Callout from "apps/blog/sections/blocks/Callout.tsx";
+import CardGroup from "apps/blog/sections/blocks/CardGroup.tsx";
+import Checklist from "apps/blog/sections/blocks/Checklist.tsx";
+import Code from "apps/blog/sections/blocks/Code.tsx";
+import Comparison from "apps/blog/sections/blocks/Comparison.tsx";
+import Cta from "apps/blog/sections/blocks/Cta.tsx";
+import Divider from "apps/blog/sections/blocks/Divider.tsx";
+import Heading from "apps/blog/sections/blocks/Heading.tsx";
+import List from "apps/blog/sections/blocks/List.tsx";
+import Paragraph from "apps/blog/sections/blocks/Paragraph.tsx";
+import Quote from "apps/blog/sections/blocks/Quote.tsx";
+import Stat from "apps/blog/sections/blocks/Stat.tsx";
+import StatGroup from "apps/blog/sections/blocks/StatGroup.tsx";
+import Steps from "apps/blog/sections/blocks/Steps.tsx";
+import Video from "apps/blog/sections/blocks/Video.tsx";
 
 interface Props {
   /**
@@ -20,6 +37,45 @@ const BLOCKQUOTE_STYLES =
 
 const CONTENT_STYLES =
   `max-w-3xl mx-auto ${PARAGRAPH_STYLES} ${HEADING_STYLES} ${CODE_BLOCK_STYLES} ${IMAGE_STYLES} ${BLOCKQUOTE_STYLES}`;
+
+// deno-lint-ignore no-explicit-any
+type AnyComponent = (props: any) => JSX.Element | null;
+
+const BLOCK_COMPONENTS: Record<string, AnyComponent> = {
+  "blog/sections/blocks/BlockImage.tsx": BlockImage,
+  "blog/sections/blocks/Callout.tsx": Callout,
+  "blog/sections/blocks/CardGroup.tsx": CardGroup,
+  "blog/sections/blocks/Checklist.tsx": Checklist,
+  "blog/sections/blocks/Code.tsx": Code,
+  "blog/sections/blocks/Comparison.tsx": Comparison,
+  "blog/sections/blocks/Cta.tsx": Cta,
+  "blog/sections/blocks/Divider.tsx": Divider,
+  "blog/sections/blocks/Heading.tsx": Heading,
+  "blog/sections/blocks/List.tsx": List,
+  "blog/sections/blocks/Paragraph.tsx": Paragraph,
+  "blog/sections/blocks/Quote.tsx": Quote,
+  "blog/sections/blocks/Stat.tsx": Stat,
+  "blog/sections/blocks/StatGroup.tsx": StatGroup,
+  "blog/sections/blocks/Steps.tsx": Steps,
+  "blog/sections/blocks/Video.tsx": Video,
+};
+
+function renderBlockSection(
+  // deno-lint-ignore no-explicit-any
+  section: any,
+  idx: number,
+) {
+  const resolveType = section?.__resolveType as string | undefined;
+  if (resolveType) {
+    const Component = BLOCK_COMPONENTS[resolveType];
+    if (!Component) return null;
+    const { __resolveType: _rt, ...props } = section;
+    return <Component key={idx} {...props} />;
+  }
+  // Already a resolved Deco section
+  const { Component, props } = section;
+  return Component ? <Component key={idx} {...props} /> : null;
+}
 
 const DEFAULT_AVATAR =
   "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/1527/7286de42-e9c5-4fcb-ae8b-b992eea4b78e";
@@ -63,9 +119,12 @@ function SocialIcons() {
 }
 
 export default function BlogPost({ page }: Props) {
-  const post = page?.post || DEFAULT_PROPS;
-  const { title, authors, image, date, content } = post;
-  const sections = post.sections;
+  const { title, image, date } = page?.post || DEFAULT_PROPS;
+  const authors: Author[] = page?.post?.authors ??
+    (DEFAULT_PROPS.authors as Author[]);
+  const sections = page?.post?.sections;
+  const content: string = page?.post?.content ??
+    (DEFAULT_PROPS.content as string);
 
   const formattedDate = new Date(date).toLocaleDateString("en-US", {
     year: "numeric",
@@ -80,36 +139,36 @@ export default function BlogPost({ page }: Props) {
         <div className="flex items-center gap-4">
           <Image
             className="object-cover w-14 h-14 rounded-full"
-            alt={authors?.[0]?.name}
-            src={authors?.[0]?.avatar || DEFAULT_AVATAR}
+            alt={authors[0]?.name}
+            src={authors[0]?.avatar || DEFAULT_AVATAR}
             width={56}
             height={56}
           />
           <div className="flex flex-col">
             <p className="font-semibold text-base">
-              {authors?.map((author) => author.name).join(", ")}
+              {authors.map((author) => author.name).join(", ")}
             </p>
             <p className="text-base">{formattedDate}</p>
           </div>
         </div>
       </div>
-      <Image
-        className="w-full object-cover aspect-video max-h-[600px] rounded-2xl"
-        width={600}
-        src={image || ""}
-      />
+      {image && (
+        <Image
+          className="w-full object-cover aspect-video max-h-[600px] rounded-2xl"
+          width={600}
+          src={image || ""}
+        />
+      )}
       {sections && sections.length > 0
         ? (
           <div class={CONTENT_STYLES}>
-            {sections.map(({ Component, props }, index) => (
-              <Component key={index} {...props} />
-            ))}
+            {sections.map(renderBlockSection)}
           </div>
         )
         : (
           <div
             class={CONTENT_STYLES}
-            dangerouslySetInnerHTML={{ __html: content ?? "" }}
+            dangerouslySetInnerHTML={{ __html: content }}
           />
         )}
       <div class="flex flex-col gap-10 max-w-3xl w-full mx-auto">
@@ -135,18 +194,18 @@ export default function BlogPost({ page }: Props) {
         <div className="flex items-center gap-4">
           <Image
             className="object-cover w-14 h-14 rounded-full"
-            alt={authors?.[0]?.name}
-            src={authors?.[0]?.avatar || ""}
+            alt={authors[0]?.name}
+            src={authors[0]?.avatar || ""}
             width={56}
             height={56}
           />
           <div className="flex flex-col">
             <p className="font-semibold text-base">
-              {authors?.[0]?.name}
+              {authors[0]?.name}
             </p>
             <p className="text-base">
-              {`${authors?.[0]?.jobTitle ?? "Job Title"}, ${
-                authors?.[0]?.company || "Company"
+              {`${authors[0]?.jobTitle ?? "Job Title"}, ${
+                authors[0]?.company || "Company"
               }`}
             </p>
           </div>

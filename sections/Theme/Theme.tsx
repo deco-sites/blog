@@ -160,7 +160,9 @@ const toVariables = (
   const toValue = (color: string | ReturnType<typeof darken>) => {
     const [l, c, h] = new Color(color).oklch;
 
-    return `${(l * 100).toFixed(0)}% ${c.toFixed(2)} ${(h || 0).toFixed(0)}deg`;
+    return `${((l ?? 0) * 100).toFixed(0)}% ${(c ?? 0).toFixed(2)} ${
+      (h || 0).toFixed(0)
+    }deg`;
   };
 
   const colorVariables = Object.entries({
