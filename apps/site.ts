@@ -14,12 +14,15 @@ export default function Site(state: Props): App<Manifest, Props, [
   WebsiteApp,
   BlogApp,
 ]> {
+  const newState = {
+    ...state, global: state.theme ? [state.theme, ...state.global ?? []] : state.global
+  }
   return {
-    state,
+    state: newState,
     manifest,
     dependencies: [
-      website(state),
-      blog(state),
+      website(newState),
+      blog(newState),
     ],
   };
 }
