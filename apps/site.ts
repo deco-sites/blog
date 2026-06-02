@@ -19,7 +19,7 @@ export default function Site(state: Props): App<Manifest, Props, [
     manifest,
     dependencies: [
       website(state),
-      blog(state),
+      blog(state as BlogApp["state"]),
     ],
   };
 }
