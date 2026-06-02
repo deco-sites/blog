@@ -1,7 +1,6 @@
 import { type BlogPost, BlogPostPage } from "apps/blog/types.ts";
 import Image from "apps/website/components/Image.tsx";
 import Icon from "site/components/ui/Icon.tsx";
-import { renderSection } from "apps/website/pages/Page.tsx";
 
 interface Props {
   /**
@@ -102,7 +101,9 @@ export default function BlogPost({ page }: Props) {
       {sections && sections.length > 0
         ? (
           <div class={CONTENT_STYLES}>
-            {sections.map(renderSection)}
+            {sections.map(({ Component, props }, index) => (
+              <Component key={index} {...props} />
+            ))}
           </div>
         )
         : (
