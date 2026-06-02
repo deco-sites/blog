@@ -1,6 +1,7 @@
 import { type BlogPost, BlogPostPage } from "apps/blog/types.ts";
 import Image from "apps/website/components/Image.tsx";
 import Icon from "site/components/ui/Icon.tsx";
+import { renderSection } from "apps/website/pages/Page.tsx";
 
 interface Props {
   /**
@@ -63,7 +64,9 @@ function SocialIcons() {
 }
 
 export default function BlogPost({ page }: Props) {
-  const { title, authors, image, date, content } = page?.post || DEFAULT_PROPS;
+  const post = page?.post || DEFAULT_PROPS;
+  const { title, authors, image, date, content } = post;
+  const sections = post.sections;
 
   const formattedDate = new Date(date).toLocaleDateString("en-US", {
     year: "numeric",
@@ -96,13 +99,18 @@ export default function BlogPost({ page }: Props) {
         width={600}
         src={image || ""}
       />
-      <div
-        class={CONTENT_STYLES}
-        dangerouslySetInnerHTML={{
-          __html: content,
-        }}
-      >
-      </div>
+      {sections && sections.length > 0
+        ? (
+          <div class={CONTENT_STYLES}>
+            {sections.map(renderSection)}
+          </div>
+        )
+        : (
+          <div
+            class={CONTENT_STYLES}
+            dangerouslySetInnerHTML={{ __html: content }}
+          />
+        )}
       <div class="flex flex-col gap-10 max-w-3xl w-full mx-auto">
         <div class="space-y-4">
           <p class="text-lg font-bold">Share this post</p>
