@@ -1,8 +1,14 @@
 {
-  "name": "collections/blog/posts/1c8bb9f3d71d",
+  "name": "collections/blog/posts/c7e4b1f0a2d9",
   "__resolveType": "blog/loaders/Blogpost.ts",
   "post": {
-    "authors": [{ "name": "Name of the Author", "email": "author@deco.cx" }],
+    "authors": [{ "name": "Deco Team", "email": "team@deco.cx" }],
+    "categories": [{ "name": "Customization", "slug": "customization" }],
+    "title": "Composable by Default: How Deco.cx Makes Customization Scalable",
+    "excerpt": "Most CMS platforms give you flexibility or consistency — rarely both. Deco.cx's composable architecture changes that, letting teams move fast without breaking things.",
+    "slug": "composable-by-default",
+    "date": "2024-05-15",
+    "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/4763/682eb374-def2-4e85-a45d-b3a7ff8a31a9",
     "content": "",
     "sections": [
       {
@@ -74,12 +80,6 @@
         "__resolveType": "blog/sections/blocks/Paragraph.tsx",
         "html": "Deco.cx sites start composable and stay that way. That's not an accident — it's the architecture."
       }
-    ],
-    "slug": "why-we-web",
-    "date": "2024-04-10",
-    "title": "Why we web",
-    "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/4763/682eb374-def2-4e85-a45d-b3a7ff8a31a9",
-    "categories": [{ "name": "Culture", "slug": "culture" }],
-    "excerpt": "We believe in a web that is simple, scalable, and collaborative. A web where anyone can test ideas and build without fear. Let's make that vision a reality."
+    ]
   }
 }

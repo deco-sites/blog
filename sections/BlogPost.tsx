@@ -81,14 +81,14 @@ export default function BlogPost({ page }: Props) {
         <div className="flex items-center gap-4">
           <Image
             className="object-cover w-14 h-14 rounded-full"
-            alt={authors[0]?.name}
-            src={authors[0]?.avatar || DEFAULT_AVATAR}
+            alt={authors?.[0]?.name}
+            src={authors?.[0]?.avatar || DEFAULT_AVATAR}
             width={56}
             height={56}
           />
           <div className="flex flex-col">
             <p className="font-semibold text-base">
-              {authors.map((author) => author.name).join(", ")}
+              {authors?.map((author) => author.name).join(", ")}
             </p>
             <p className="text-base">{formattedDate}</p>
           </div>
@@ -108,7 +108,7 @@ export default function BlogPost({ page }: Props) {
         : (
           <div
             class={CONTENT_STYLES}
-            dangerouslySetInnerHTML={{ __html: content }}
+            dangerouslySetInnerHTML={{ __html: content ?? "" }}
           />
         )}
       <div class="flex flex-col gap-10 max-w-3xl w-full mx-auto">
@@ -134,18 +134,18 @@ export default function BlogPost({ page }: Props) {
         <div className="flex items-center gap-4">
           <Image
             className="object-cover w-14 h-14 rounded-full"
-            alt={authors[0]?.name}
-            src={authors[0]?.avatar || ""}
+            alt={authors?.[0]?.name}
+            src={authors?.[0]?.avatar || ""}
             width={56}
             height={56}
           />
           <div className="flex flex-col">
             <p className="font-semibold text-base">
-              {authors[0].name}
+              {authors?.[0]?.name}
             </p>
             <p className="text-base">
-              {`${authors[0].jobTitle ?? "Job Title"}, ${
-                authors[0].company || "Company"
+              {`${authors?.[0]?.jobTitle ?? "Job Title"}, ${
+                authors?.[0]?.company || "Company"
               }`}
             </p>
           </div>
