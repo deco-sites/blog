@@ -2,8 +2,18 @@
   "name": "collections/blog/posts/c7e4b1f0a2d9",
   "__resolveType": "blog/loaders/Blogpost.ts",
   "post": {
-    "authors": [{ "name": "Deco Team", "email": "team@deco.cx" }],
-    "categories": [{ "name": "Customization", "slug": "customization" }],
+    "authors": [
+      {
+        "name": "Deco Team",
+        "email": "team@deco.cx"
+      }
+    ],
+    "categories": [
+      {
+        "name": "Customization",
+        "slug": "customization"
+      }
+    ],
     "title": "Composable by Default: How Deco.cx Makes Customization Scalable",
     "excerpt": "Most CMS platforms give you flexibility or consistency — rarely both. Deco.cx's composable architecture changes that, letting teams move fast without breaking things.",
     "slug": "composable-by-default",
@@ -42,6 +52,21 @@
         "level": "2"
       },
       {
+        "__resolveType": "blog/sections/blocks/Heading.tsx"
+      },
+      {
+        "__resolveType": "blog/sections/blocks/Callout.tsx"
+      },
+      {
+        "__resolveType": "blog/sections/blocks/BlockImage.tsx"
+      },
+      {
+        "__resolveType": "blog/sections/blocks/Paragraph.tsx"
+      },
+      {
+        "__resolveType": "blog/sections/blocks/Heading.tsx"
+      },
+      {
         "__resolveType": "blog/sections/blocks/Paragraph.tsx",
         "html": "Where composability pays off most visibly is in Deco Studio. Editors see the page as a list of sections, each with a form for its props. They can reorder, duplicate, remove, and add sections without touching code. Changes preview instantly. Publish with a click."
       },
@@ -65,6 +90,9 @@
       {
         "__resolveType": "blog/sections/blocks/Paragraph.tsx",
         "html": "Third-party apps follow the same pattern. The community can publish apps with their own sections, loaders, and UI — and any Deco site can install and compose them in Studio. This is how you get the consistency of a platform with the flexibility of custom development."
+      },
+      {
+        "__resolveType": "blog/sections/blocks/Cta.tsx"
       },
       {
         "__resolveType": "blog/sections/blocks/Heading.tsx",
